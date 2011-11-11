@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Expert.h"
 
 @interface FirstViewController : UIViewController
+
+@property (strong, nonatomic) Expert* expert;
+@property (assign) IBOutlet UILabel* expertName;
+@property (assign) IBOutlet UILabel* careerLevel;
+@property (assign) IBOutlet UILabel* businessUnit;
+@property (assign) IBOutlet UIImageView* picture;
 
 @end

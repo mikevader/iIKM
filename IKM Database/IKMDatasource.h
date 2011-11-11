@@ -12,5 +12,6 @@
 @interface IKMDatasource : NSObject
 
 -(NSSet*)retreiveAllSkills;
+-(NSSet*)listAllExpertsForSkill:(NSNumber*)skillGuid;
 
 @end

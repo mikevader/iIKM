@@ -10,6 +10,11 @@
 
 @implementation FirstViewController
 
+@synthesize expert;
+@synthesize expertName;
+@synthesize careerLevel;
+@synthesize businessUnit;
+@synthesize picture;
 
 - (void)didReceiveMemoryWarning
 {
@@ -35,6 +40,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    expertName.text = expert.firstName;
+    careerLevel.text = expert.careerLevel;
 }
 
 - (void)viewDidAppear:(BOOL)animated

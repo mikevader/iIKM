@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD587690146D27C300AE263A /* Expert.m in Sources */ = {isa = PBXBuildFile; fileRef = DD58768F146D27C300AE263A /* Expert.m */; };
 		DDA6ABF0146A7E2700383B11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABEF146A7E2700383B11 /* UIKit.framework */; };
 		DDA6ABF2146A7E2700383B11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABF1146A7E2700383B11 /* Foundation.framework */; };
 		DDA6ABF4146A7E2700383B11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABF3146A7E2700383B11 /* CoreGraphics.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD58768E146D27C300AE263A /* Expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expert.h; sourceTree = "<group>"; };
+		DD58768F146D27C300AE263A /* Expert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expert.m; sourceTree = "<group>"; };
 		DDA6ABEB146A7E2700383B11 /* IKM Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IKM Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6ABEF146A7E2700383B11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDA6ABF1146A7E2700383B11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +106,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD58768D146D279100AE263A /* IKMDB */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6AC32146A818E00383B11 /* IKMDatasource.h */,
+				DDA6AC33146A818E00383B11 /* IKMDatasource.m */,
+				DDA6AC35146A834000383B11 /* Skill.h */,
+				DDA6AC36146A834000383B11 /* Skill.m */,
+				DD58768E146D27C300AE263A /* Expert.h */,
+				DD58768F146D27C300AE263A /* Expert.m */,
+			);
+			name = IKMDB;
+			sourceTree = "<group>";
+		};
 		DDA6ABE0146A7E2700383B11 = {
 			isa = PBXGroup;
 			children = (
@@ -148,10 +164,7 @@
 				DDA6AC0F146A7E2700383B11 /* SecondViewController.m */,
 				DDA6AC11146A7E2700383B11 /* second.png */,
 				DDA6AC13146A7E2700383B11 /* second@2x.png */,
-				DDA6AC32146A818E00383B11 /* IKMDatasource.h */,
-				DDA6AC33146A818E00383B11 /* IKMDatasource.m */,
-				DDA6AC35146A834000383B11 /* Skill.h */,
-				DDA6AC36146A834000383B11 /* Skill.m */,
+				DD58768D146D279100AE263A /* IKMDB */,
 				DDA6ABF6146A7E2700383B11 /* Supporting Files */,
 				DDA6AC42146AA8CF00383B11 /* SkillTableViewController.h */,
 				DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */,
@@ -311,6 +324,7 @@
 				DDA6AC37146A834000383B11 /* Skill.m in Sources */,
 				DDA6AC44146AA8CF00383B11 /* SkillTableViewController.m in Sources */,
 				DDD8BB18146AD9D500BF504D /* ExpertTableViewController.m in Sources */,
+				DD587690146D27C300AE263A /* Expert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

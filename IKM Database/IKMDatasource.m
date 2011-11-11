@@ -8,6 +8,7 @@
 
 #import "IKMDatasource.h"
 #import "Skill.h"
+#import "Expert.h"
 
 @implementation IKMDatasource
 
@@ -25,6 +26,16 @@
     [skills addObject:[Skill skillWithId:[NSNumber numberWithInt:6] andName:@"NetBeans"]];
     
     return skills;
+}
+
+
+-(NSSet*)listAllExpertsForSkill:(NSNumber*)skillGuid
+{
+    NSMutableSet* experts = [[NSMutableSet alloc] init];
+    
+    [experts addObject:[Expert expertWithFirstName:@"Michael" LastName:@"Mühlebach"]];
+    
+    return experts;
 }
 
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Skill.h"
+#import "Expert.h"
+#import "FirstViewController.h"
+#import "IKMDatasource.h"
 
 @interface ExpertTableViewController : UITableViewController
+
+@property (strong, nonatomic) Skill* skill;
+@property (strong, nonatomic) NSArray* experts;
 
 @end
