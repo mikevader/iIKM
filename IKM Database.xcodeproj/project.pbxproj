@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDA6ABF0146A7E2700383B11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABEF146A7E2700383B11 /* UIKit.framework */; };
+		DDA6ABF2146A7E2700383B11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABF1146A7E2700383B11 /* Foundation.framework */; };
+		DDA6ABF4146A7E2700383B11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABF3146A7E2700383B11 /* CoreGraphics.framework */; };
+		DDA6ABFA146A7E2700383B11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDA6ABF8146A7E2700383B11 /* InfoPlist.strings */; };
+		DDA6ABFC146A7E2700383B11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6ABFB146A7E2700383B11 /* main.m */; };
+		DDA6AC00146A7E2700383B11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6ABFF146A7E2700383B11 /* AppDelegate.m */; };
+		DDA6AC03146A7E2700383B11 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC01146A7E2700383B11 /* MainStoryboard_iPhone.storyboard */; };
+		DDA6AC06146A7E2700383B11 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC04146A7E2700383B11 /* MainStoryboard_iPad.storyboard */; };
+		DDA6AC09146A7E2700383B11 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC08146A7E2700383B11 /* FirstViewController.m */; };
+		DDA6AC0B146A7E2700383B11 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC0A146A7E2700383B11 /* first.png */; };
+		DDA6AC0D146A7E2700383B11 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC0C146A7E2700383B11 /* first@2x.png */; };
+		DDA6AC10146A7E2700383B11 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC0F146A7E2700383B11 /* SecondViewController.m */; };
+		DDA6AC12146A7E2700383B11 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC11146A7E2700383B11 /* second.png */; };
+		DDA6AC14146A7E2700383B11 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC13146A7E2700383B11 /* second@2x.png */; };
+		DDA6AC1C146A7E2700383B11 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6AC1B146A7E2700383B11 /* SenTestingKit.framework */; };
+		DDA6AC1D146A7E2700383B11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABEF146A7E2700383B11 /* UIKit.framework */; };
+		DDA6AC1E146A7E2700383B11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABF1146A7E2700383B11 /* Foundation.framework */; };
+		DDA6AC26146A7E2700383B11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC24146A7E2700383B11 /* InfoPlist.strings */; };
+		DDA6AC29146A7E2700383B11 /* IKM_DatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC28146A7E2700383B11 /* IKM_DatabaseTests.m */; };
+		DDA6AC34146A818E00383B11 /* IKMDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC33146A818E00383B11 /* IKMDatasource.m */; };
+		DDA6AC37146A834000383B11 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC36146A834000383B11 /* Skill.m */; };
+		DDA6AC44146AA8CF00383B11 /* SkillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */; };
+		DDD8BB18146AD9D500BF504D /* ExpertTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDA6AC1F146A7E2700383B11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA6ABE2146A7E2700383B11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA6ABEA146A7E2700383B11;
+			remoteInfo = "IKM Database";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDA6ABEB146A7E2700383B11 /* IKM Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IKM Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA6ABEF146A7E2700383B11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DDA6ABF1146A7E2700383B11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DDA6ABF3146A7E2700383B11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DDA6ABF7146A7E2700383B11 /* IKM Database-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IKM Database-Info.plist"; sourceTree = "<group>"; };
+		DDA6ABF9146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDA6ABFB146A7E2700383B11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDA6ABFD146A7E2700383B11 /* IKM Database-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IKM Database-Prefix.pch"; sourceTree = "<group>"; };
+		DDA6ABFE146A7E2700383B11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DDA6ABFF146A7E2700383B11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DDA6AC02146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		DDA6AC05146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		DDA6AC07146A7E2700383B11 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		DDA6AC08146A7E2700383B11 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		DDA6AC0A146A7E2700383B11 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		DDA6AC0C146A7E2700383B11 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		DDA6AC0E146A7E2700383B11 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		DDA6AC0F146A7E2700383B11 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DDA6AC11146A7E2700383B11 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		DDA6AC13146A7E2700383B11 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		DDA6AC1A146A7E2700383B11 /* IKM DatabaseTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IKM DatabaseTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA6AC1B146A7E2700383B11 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DDA6AC23146A7E2700383B11 /* IKM DatabaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IKM DatabaseTests-Info.plist"; sourceTree = "<group>"; };
+		DDA6AC25146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDA6AC27146A7E2700383B11 /* IKM_DatabaseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IKM_DatabaseTests.h; sourceTree = "<group>"; };
+		DDA6AC28146A7E2700383B11 /* IKM_DatabaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IKM_DatabaseTests.m; sourceTree = "<group>"; };
+		DDA6AC32146A818E00383B11 /* IKMDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKMDatasource.h; sourceTree = "<group>"; };
+		DDA6AC33146A818E00383B11 /* IKMDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMDatasource.m; sourceTree = "<group>"; };
+		DDA6AC35146A834000383B11 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
+		DDA6AC36146A834000383B11 /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
+		DDA6AC42146AA8CF00383B11 /* SkillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTableViewController.h; sourceTree = "<group>"; };
+		DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTableViewController.m; sourceTree = "<group>"; };
+		DDD8BB16146AD9D500BF504D /* ExpertTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertTableViewController.h; sourceTree = "<group>"; };
+		DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDA6ABE8146A7E2700383B11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA6ABF0146A7E2700383B11 /* UIKit.framework in Frameworks */,
+				DDA6ABF2146A7E2700383B11 /* Foundation.framework in Frameworks */,
+				DDA6ABF4146A7E2700383B11 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA6AC16146A7E2700383B11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA6AC1C146A7E2700383B11 /* SenTestingKit.framework in Frameworks */,
+				DDA6AC1D146A7E2700383B11 /* UIKit.framework in Frameworks */,
+				DDA6AC1E146A7E2700383B11 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDA6ABE0146A7E2700383B11 = {
+			isa = PBXGroup;
+			children = (
+				DDA6ABF5146A7E2700383B11 /* IKM Database */,
+				DDA6AC21146A7E2700383B11 /* IKM DatabaseTests */,
+				DDA6ABEE146A7E2700383B11 /* Frameworks */,
+				DDA6ABEC146A7E2700383B11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDA6ABEC146A7E2700383B11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6ABEB146A7E2700383B11 /* IKM Database.app */,
+				DDA6AC1A146A7E2700383B11 /* IKM DatabaseTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDA6ABEE146A7E2700383B11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6ABEF146A7E2700383B11 /* UIKit.framework */,
+				DDA6ABF1146A7E2700383B11 /* Foundation.framework */,
+				DDA6ABF3146A7E2700383B11 /* CoreGraphics.framework */,
+				DDA6AC1B146A7E2700383B11 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDA6ABF5146A7E2700383B11 /* IKM Database */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6ABFE146A7E2700383B11 /* AppDelegate.h */,
+				DDA6ABFF146A7E2700383B11 /* AppDelegate.m */,
+				DDA6AC01146A7E2700383B11 /* MainStoryboard_iPhone.storyboard */,
+				DDA6AC04146A7E2700383B11 /* MainStoryboard_iPad.storyboard */,
+				DDA6AC07146A7E2700383B11 /* FirstViewController.h */,
+				DDA6AC08146A7E2700383B11 /* FirstViewController.m */,
+				DDA6AC0A146A7E2700383B11 /* first.png */,
+				DDA6AC0C146A7E2700383B11 /* first@2x.png */,
+				DDA6AC0E146A7E2700383B11 /* SecondViewController.h */,
+				DDA6AC0F146A7E2700383B11 /* SecondViewController.m */,
+				DDA6AC11146A7E2700383B11 /* second.png */,
+				DDA6AC13146A7E2700383B11 /* second@2x.png */,
+				DDA6AC32146A818E00383B11 /* IKMDatasource.h */,
+				DDA6AC33146A818E00383B11 /* IKMDatasource.m */,
+				DDA6AC35146A834000383B11 /* Skill.h */,
+				DDA6AC36146A834000383B11 /* Skill.m */,
+				DDA6ABF6146A7E2700383B11 /* Supporting Files */,
+				DDA6AC42146AA8CF00383B11 /* SkillTableViewController.h */,
+				DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */,
+				DDD8BB16146AD9D500BF504D /* ExpertTableViewController.h */,
+				DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */,
+			);
+			path = "IKM Database";
+			sourceTree = "<group>";
+		};
+		DDA6ABF6146A7E2700383B11 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6ABF7146A7E2700383B11 /* IKM Database-Info.plist */,
+				DDA6ABF8146A7E2700383B11 /* InfoPlist.strings */,
+				DDA6ABFB146A7E2700383B11 /* main.m */,
+				DDA6ABFD146A7E2700383B11 /* IKM Database-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDA6AC21146A7E2700383B11 /* IKM DatabaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6AC27146A7E2700383B11 /* IKM_DatabaseTests.h */,
+				DDA6AC28146A7E2700383B11 /* IKM_DatabaseTests.m */,
+				DDA6AC22146A7E2700383B11 /* Supporting Files */,
+			);
+			path = "IKM DatabaseTests";
+			sourceTree = "<group>";
+		};
+		DDA6AC22146A7E2700383B11 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6AC23146A7E2700383B11 /* IKM DatabaseTests-Info.plist */,
+				DDA6AC24146A7E2700383B11 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDA6ABEA146A7E2700383B11 /* IKM Database */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA6AC2C146A7E2700383B11 /* Build configuration list for PBXNativeTarget "IKM Database" */;
+			buildPhases = (
+				DDA6ABE7146A7E2700383B11 /* Sources */,
+				DDA6ABE8146A7E2700383B11 /* Frameworks */,
+				DDA6ABE9146A7E2700383B11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IKM Database";
+			productName = "IKM Database";
+			productReference = DDA6ABEB146A7E2700383B11 /* IKM Database.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDA6AC19146A7E2700383B11 /* IKM DatabaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA6AC2F146A7E2700383B11 /* Build configuration list for PBXNativeTarget "IKM DatabaseTests" */;
+			buildPhases = (
+				DDA6AC15146A7E2700383B11 /* Sources */,
+				DDA6AC16146A7E2700383B11 /* Frameworks */,
+				DDA6AC17146A7E2700383B11 /* Resources */,
+				DDA6AC18146A7E2700383B11 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA6AC20146A7E2700383B11 /* PBXTargetDependency */,
+			);
+			name = "IKM DatabaseTests";
+			productName = "IKM DatabaseTests";
+			productReference = DDA6AC1A146A7E2700383B11 /* IKM DatabaseTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDA6ABE2146A7E2700383B11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Zühlke Engineering AG";
+			};
+			buildConfigurationList = DDA6ABE5146A7E2700383B11 /* Build configuration list for PBXProject "IKM Database" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DDA6ABE0146A7E2700383B11;
+			productRefGroup = DDA6ABEC146A7E2700383B11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDA6ABEA146A7E2700383B11 /* IKM Database */,
+				DDA6AC19146A7E2700383B11 /* IKM DatabaseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDA6ABE9146A7E2700383B11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA6ABFA146A7E2700383B11 /* InfoPlist.strings in Resources */,
+				DDA6AC03146A7E2700383B11 /* MainStoryboard_iPhone.storyboard in Resources */,
+				DDA6AC06146A7E2700383B11 /* MainStoryboard_iPad.storyboard in Resources */,
+				DDA6AC0B146A7E2700383B11 /* first.png in Resources */,
+				DDA6AC0D146A7E2700383B11 /* first@2x.png in Resources */,
+				DDA6AC12146A7E2700383B11 /* second.png in Resources */,
+				DDA6AC14146A7E2700383B11 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA6AC17146A7E2700383B11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA6AC26146A7E2700383B11 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DDA6AC18146A7E2700383B11 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDA6ABE7146A7E2700383B11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA6ABFC146A7E2700383B11 /* main.m in Sources */,
+				DDA6AC00146A7E2700383B11 /* AppDelegate.m in Sources */,
+				DDA6AC09146A7E2700383B11 /* FirstViewController.m in Sources */,
+				DDA6AC10146A7E2700383B11 /* SecondViewController.m in Sources */,
+				DDA6AC34146A818E00383B11 /* IKMDatasource.m in Sources */,
+				DDA6AC37146A834000383B11 /* Skill.m in Sources */,
+				DDA6AC44146AA8CF00383B11 /* SkillTableViewController.m in Sources */,
+				DDD8BB18146AD9D500BF504D /* ExpertTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA6AC15146A7E2700383B11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA6AC29146A7E2700383B11 /* IKM_DatabaseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDA6AC20146A7E2700383B11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA6ABEA146A7E2700383B11 /* IKM Database */;
+			targetProxy = DDA6AC1F146A7E2700383B11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDA6ABF8146A7E2700383B11 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA6ABF9146A7E2700383B11 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DDA6AC01146A7E2700383B11 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA6AC02146A7E2700383B11 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		DDA6AC04146A7E2700383B11 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA6AC05146A7E2700383B11 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		DDA6AC24146A7E2700383B11 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA6AC25146A7E2700383B11 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDA6AC2A146A7E2700383B11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDA6AC2B146A7E2700383B11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDA6AC2D146A7E2700383B11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IKM Database/IKM Database-Prefix.pch";
+				INFOPLIST_FILE = "IKM Database/IKM Database-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DDA6AC2E146A7E2700383B11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IKM Database/IKM Database-Prefix.pch";
+				INFOPLIST_FILE = "IKM Database/IKM Database-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DDA6AC30146A7E2700383B11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IKM Database.app/IKM Database";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IKM Database/IKM Database-Prefix.pch";
+				INFOPLIST_FILE = "IKM DatabaseTests/IKM DatabaseTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DDA6AC31146A7E2700383B11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IKM Database.app/IKM Database";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IKM Database/IKM Database-Prefix.pch";
+				INFOPLIST_FILE = "IKM DatabaseTests/IKM DatabaseTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDA6ABE5146A7E2700383B11 /* Build configuration list for PBXProject "IKM Database" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA6AC2A146A7E2700383B11 /* Debug */,
+				DDA6AC2B146A7E2700383B11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA6AC2C146A7E2700383B11 /* Build configuration list for PBXNativeTarget "IKM Database" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA6AC2D146A7E2700383B11 /* Debug */,
+				DDA6AC2E146A7E2700383B11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA6AC2F146A7E2700383B11 /* Build configuration list for PBXNativeTarget "IKM DatabaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA6AC30146A7E2700383B11 /* Debug */,
+				DDA6AC31146A7E2700383B11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDA6ABE2146A7E2700383B11 /* Project object */;
+}
