@@ -10,6 +10,8 @@
 
 @implementation SecondViewController
 
+@synthesize text;
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

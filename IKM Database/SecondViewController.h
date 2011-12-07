@@ -10,4 +10,6 @@
 
 @interface SecondViewController : UIViewController
 
+@property(assign) UITextField* IBOutlet text;
+
 @end
