@@ -12,21 +12,56 @@
 
 @implementation IKMDatasource
 
+NSMutableSet* skills;
+
 -(id)init
 {
     self = [super init];
+    skills = [[NSMutableSet alloc]init];
     return self;
 }
 
 -(NSSet*)retreiveAllSkills
 {
-    NSMutableSet* skills = [[NSMutableSet alloc]init];
+    NSString* urlString = @"http://localhost:8084/ikm/skill";
+    
+    NSURL* url = [NSURL URLWithString:urlString];
+    
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    
+    NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
     
     [skills addObject:[Skill skillWithId:[NSNumber numberWithInt:5] andName:@"JavaEE"]];
     [skills addObject:[Skill skillWithId:[NSNumber numberWithInt:6] andName:@"NetBeans"]];
     
     return skills;
 }
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"JSON String %@", jsonString);
+    
+    NSError* jsonParsingError = nil;
+    NSArray* skillArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
+
+    for (NSDictionary* dict in skillArray) {
+        
+        NSArray* manythings = dict.allKeys;
+        
+        for (NSString* something in manythings) {
+            NSLog(@"LOG: %@", something);
+        }
+        
+        
+        NSLog(@"Log %@", [dict description]);
+    }
+    
+    
+}
+
+
 
 
 -(NSSet*)listAllExpertsForSkill:(NSNumber*)skillGuid
