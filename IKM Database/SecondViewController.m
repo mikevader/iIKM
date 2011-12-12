@@ -33,6 +33,10 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (IBAction)hello:(id)sender {
+}
+
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

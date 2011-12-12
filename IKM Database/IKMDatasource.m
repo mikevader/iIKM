@@ -17,7 +17,7 @@ NSMutableSet* skills;
 -(id)init
 {
     self = [super init];
-    skills = [[NSMutableSet alloc]init];
+    skills = [[NSMutableSet alloc] init];
     return self;
 }
 
@@ -44,21 +44,19 @@ NSMutableSet* skills;
     NSLog(@"JSON String %@", jsonString);
     
     NSError* jsonParsingError = nil;
-    NSArray* skillArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
+    NSDictionary* skillArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
 
-    for (NSDictionary* dict in skillArray) {
+    for (NSDictionary* dict in [skillArray objectForKey:@"skills"]) {
         
-        NSArray* manythings = dict.allKeys;
-        
-        for (NSString* something in manythings) {
-            NSLog(@"LOG: %@", something);
-        }
+        NSNumber* guid = [NSNumber numberWithInt:[[dict objectForKey:@"guid"] intValue]];
+        NSString* name = [dict objectForKey:@"name"];
+        NSString* comment = [dict objectForKey:@"comment"];
         
         
-        NSLog(@"Log %@", [dict description]);
+        [skills addObject:[Skill skillWithId:guid andName:name]];
+        
+        NSLog(@"Added: %@", [dict description]);
     }
-    
-    
 }
 
 
