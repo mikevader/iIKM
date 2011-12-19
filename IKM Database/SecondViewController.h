@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TextDownloader.h"
 
-@interface SecondViewController : UIViewController
-
-@property(assign) UITextField* IBOutlet text;
+@interface SecondViewController : UIViewController <TextDownloaderDelegate>
+@property (weak, nonatomic) IBOutlet UITextView *resultText;
+@property (weak, nonatomic) IBOutlet UITextField *requestUrl;
 
 @end

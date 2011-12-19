@@ -7,10 +7,12 @@
 //
 
 #import "SecondViewController.h"
+#import "TextDownloader.h"
 
 @implementation SecondViewController
+@synthesize resultText;
+@synthesize requestUrl;
 
-@synthesize text;
 
 - (void)didReceiveMemoryWarning
 {
@@ -28,14 +30,25 @@
 
 - (void)viewDidUnload
 {
+    [self setResultText:nil];
+    [self setRequestUrl:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (IBAction)hello:(id)sender {
+- (IBAction)loadUrl:(id)sender {
+    TextDownloader* downloader = [[TextDownloader alloc] init];
+    downloader.requestURL = requestUrl.text;
+    downloader.delegate = self;
+    
+    [downloader startDownload];
 }
 
+- (void)appTextDidLoad:(NSString*)text
+{
+    resultText.text = text;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

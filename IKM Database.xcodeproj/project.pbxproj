@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD08DE78149F9DC300B0A2FA /* TextDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD08DE77149F9DC300B0A2FA /* TextDownloader.m */; };
 		DD587690146D27C300AE263A /* Expert.m in Sources */ = {isa = PBXBuildFile; fileRef = DD58768F146D27C300AE263A /* Expert.m */; };
 		DDA6ABF0146A7E2700383B11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABEF146A7E2700383B11 /* UIKit.framework */; };
 		DDA6ABF2146A7E2700383B11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABF1146A7E2700383B11 /* Foundation.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD08DE76149F9DC300B0A2FA /* TextDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDownloader.h; sourceTree = "<group>"; };
+		DD08DE77149F9DC300B0A2FA /* TextDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDownloader.m; sourceTree = "<group>"; };
 		DD58768E146D27C300AE263A /* Expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expert.h; sourceTree = "<group>"; };
 		DD58768F146D27C300AE263A /* Expert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expert.m; sourceTree = "<group>"; };
 		DDA6ABEB146A7E2700383B11 /* IKM Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IKM Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +155,8 @@
 		DDA6ABF5146A7E2700383B11 /* IKM Database */ = {
 			isa = PBXGroup;
 			children = (
+				DD08DE76149F9DC300B0A2FA /* TextDownloader.h */,
+				DD08DE77149F9DC300B0A2FA /* TextDownloader.m */,
 				DDA6ABFE146A7E2700383B11 /* AppDelegate.h */,
 				DDA6ABFF146A7E2700383B11 /* AppDelegate.m */,
 				DDA6AC01146A7E2700383B11 /* MainStoryboard_iPhone.storyboard */,
@@ -325,6 +330,7 @@
 				DDA6AC44146AA8CF00383B11 /* SkillTableViewController.m in Sources */,
 				DDD8BB18146AD9D500BF504D /* ExpertTableViewController.m in Sources */,
 				DD587690146D27C300AE263A /* Expert.m in Sources */,
+				DD08DE78149F9DC300B0A2FA /* TextDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
