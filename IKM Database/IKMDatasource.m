@@ -12,7 +12,12 @@
 
 @implementation IKMDatasource
 
+@synthesize skillConnection;
+@synthesize delegate;
+@synthesize activeDownload;
+
 NSMutableSet* skills;
+
 
 -(id)init
 {
@@ -21,20 +26,18 @@ NSMutableSet* skills;
     return self;
 }
 
--(NSSet*)retreiveAllSkills
+-(void)startDownloadSkills
 {
-    NSString* urlString = @"http://localhost:8084/ikm/skill";
+    NSString* urlString = @"http://192.168.3.50:8084/ikm/skill";
+    self.activeDownload = [NSMutableData data];
     
     NSURL* url = [NSURL URLWithString:urlString];
     
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     
-    NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    skillConnection = [NSURLConnection connectionWithRequest:request delegate:self];
     
-    [skills addObject:[Skill skillWithId:[NSNumber numberWithInt:5] andName:@"JavaEE"]];
-    [skills addObject:[Skill skillWithId:[NSNumber numberWithInt:6] andName:@"NetBeans"]];
-    
-    return skills;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 
@@ -42,22 +45,86 @@ NSMutableSet* skills;
 {
     NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"JSON String %@", jsonString);
-    
-    NSError* jsonParsingError = nil;
-    NSDictionary* skillArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
-
-    for (NSDictionary* dict in [skillArray objectForKey:@"skills"]) {
-        
-        NSNumber* guid = [NSNumber numberWithInt:[[dict objectForKey:@"guid"] intValue]];
-        NSString* name = [dict objectForKey:@"name"];
-        NSString* comment = [dict objectForKey:@"comment"];
-        
-        
-        [skills addObject:[Skill skillWithId:guid andName:name]];
-        
-        NSLog(@"Added: %@", [dict description]);
-    }
+    [self.activeDownload appendData:data];
 }
+
+// -------------------------------------------------------------------------------
+//	connectionDidFinishLoading:connection
+// -------------------------------------------------------------------------------
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    //self.activeDownload = nil;
+    self.skillConnection = nil;   // release our connection
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;   
+
+    NSError* jsonParsingError = nil;
+    NSDictionary* skillArray = [NSJSONSerialization JSONObjectWithData:self.activeDownload options:0 error:&jsonParsingError];
+    
+    if (jsonParsingError) {
+        [self handleError:jsonParsingError];
+    }
+    else
+    {
+        for (NSDictionary* dict in [skillArray objectForKey:@"skills"]) {
+            
+            NSNumber* guid = [NSNumber numberWithInt:[[dict objectForKey:@"guid"] intValue]];
+            NSString* name = [dict objectForKey:@"name"];
+            NSString* comment = [dict objectForKey:@"comment"];
+            
+            Skill* skill = [Skill skillWithId:guid andName:name];
+            skill.comment = comment;
+            
+            [skills addObject:skill];
+            
+            NSLog(@"Added: %@", [dict description]);
+        }
+    }
+
+    [skills addObject:[Skill skillWithId:[NSNumber numberWithInt:5] andName:@"JavaEE"]];
+    [skills addObject:[Skill skillWithId:[NSNumber numberWithInt:6] andName:@"NetBeans"]];
+    
+    
+    [delegate skillsDidLoad:[skills allObjects]];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    if ([error code] == kCFURLErrorNotConnectedToInternet)
+	{
+        // if we can identify the error, we can present a more precise message to the user.
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"No Connection Error"
+															 forKey:NSLocalizedDescriptionKey];
+        NSError *noConnectionError = [NSError errorWithDomain:NSCocoaErrorDomain
+														 code:kCFURLErrorNotConnectedToInternet
+													 userInfo:userInfo];
+        [self handleError:noConnectionError];
+    }
+	else
+	{
+        // otherwise handle the error generically
+        [self handleError:error];
+    }
+    
+    self.skillConnection = nil;   // release our connection
+}
+
+
+// -------------------------------------------------------------------------------
+//	handleError:error
+// -------------------------------------------------------------------------------
+- (void)handleError:(NSError *)error
+{
+    NSString *errorMessage = [error localizedDescription];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Can not load skills from IKM."
+														message:errorMessage
+													   delegate:nil
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+    [alertView show];
+}
+
 
 
 

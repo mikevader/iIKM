@@ -10,11 +10,12 @@
 #import "IKMDatasource.h"
 #import "ExpertTableViewController.h"
 
-@interface SkillTableViewController : UITableViewController
+@interface SkillTableViewController : UITableViewController<SkillDownloaderDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 {
     IKMDatasource* ikmWrapper;
     
 }
 @property (strong, nonatomic) NSArray* skills;
+@property (strong, nonatomic) NSMutableArray* filteredSkills;
 
 @end

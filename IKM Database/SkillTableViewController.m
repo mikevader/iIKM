@@ -12,6 +12,7 @@
 @implementation SkillTableViewController
 
 @synthesize skills;
+@synthesize filteredSkills;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -41,7 +42,8 @@
         ikmWrapper = [[IKMDatasource alloc] init];
     }
     
-    skills = [[ikmWrapper retreiveAllSkills] allObjects];
+    ikmWrapper.delegate = self;
+    [ikmWrapper startDownloadSkills];
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -56,6 +58,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.filteredSkills = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -92,14 +95,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return skills.count;
+    /*
+	 If the requesting table view is the search display controller's table view, return the count of
+     the filtered list, otherwise return the count of the main list.
+	 */
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        return [self.filteredSkills count];
+    }
+	else
+	{
+        return [self.skills count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,16 +122,81 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    UILabel* label = (UILabel*)[cell viewWithTag:100];
-    Skill* skill = [skills objectAtIndex:indexPath.row];
-    label.text = skill.name;
-    
+    Skill* skill = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        skill = [self.filteredSkills objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        skill = [self.skills objectAtIndex:indexPath.row];
+    }
     
     // Configure the cell...
+    UILabel* label = (UILabel*)[cell viewWithTag:100];
+    label.text = skill.name;
+    cell.textLabel.text = skill.name;
     
     return cell;
+}
+
+- (void)skillsDidLoad:(NSArray *)skills
+{
+    self.skills = skills;
+    self.filteredSkills = [NSMutableArray arrayWithCapacity:[self.skills count]];
+    [self.tableView reloadData];
+}
+
+- (IBAction)reloadFromServer:(id)sender {
+    [ikmWrapper startDownloadSkills];
+}
+
+#pragma mark -
+#pragma mark Content Filtering
+
+- (void)filterContentForSearchText:(NSString*)searchText
+{
+	/*
+	 Update the filtered array based on the search text and scope.
+	 */
+	
+	[self.filteredSkills removeAllObjects]; // First clear the filtered array.
+	
+	/*
+	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
+	 */
+	for (Skill *skill in skills)
+	{
+        NSComparisonResult result = [skill.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+        if (result == NSOrderedSame)
+        {
+            [self.filteredSkills addObject:skill];
+		}
+	}
+}
+
+
+#pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 /*
@@ -171,6 +249,25 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+
+    UIViewController *detailsViewController = [[UIViewController alloc] init];
+    
+	/*
+	 If the requesting table view is the search display controller's table view, configure the next view controller using the filtered content, otherwise use the main list.
+	 */
+	Skill *skill = nil;
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        skill = [self.filteredSkills objectAtIndex:indexPath.row];
+    }
+	else
+	{
+        skill = [self.skills objectAtIndex:indexPath.row];
+    }
+	detailsViewController.title = product.name;
+    
+    [[self navigationController] pushViewController:detailsViewController animated:YES];
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

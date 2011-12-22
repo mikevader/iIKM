@@ -7,12 +7,14 @@
 //
 
 #import "ExpertTableViewController.h"
+#import "ImageDownloader.h"
 
 
 @implementation ExpertTableViewController
 
 @synthesize skill;
 @synthesize experts;
+@synthesize imageDownloadsInProgress;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -41,6 +43,7 @@
     
     experts = [[ikmWrapper listAllExpertsForSkill:skill.guid] allObjects];
     
+    self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -90,14 +93,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return experts.count;
 }
@@ -116,10 +117,91 @@
     cell.textLabel.text = [expert.firstName stringByAppendingString:expert.lastName];
     
     
+    // Only load cached images; defer new downloads until scrolling ends
+    if (!expert.image)
+    {
+        if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
+        {
+            [self startIconDownload:expert forIndexPath:indexPath];
+        }
+        // if a download is deferred or in progress, return a placeholder image
+        cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];                
+    }
+    else
+    {
+        cell.imageView.image = expert.image;
+    }
+
+    
     // Configure the cell...
     
     return cell;
 }
+
+#pragma mark - Table cell image support
+
+- (void)startIconDownload:(Expert *)expert forIndexPath:(NSIndexPath *)indexPath
+{
+    ImageDownloader *iconDownloader = [imageDownloadsInProgress objectForKey:indexPath];
+    if (iconDownloader == nil) 
+    {
+        iconDownloader = [[ImageDownloader alloc] init];
+        iconDownloader.expert = expert;
+        iconDownloader.indexPathInTableView = indexPath;
+        iconDownloader.delegate = self;
+        [imageDownloadsInProgress setObject:iconDownloader forKey:indexPath];
+        [iconDownloader startDownload];
+    }
+}
+
+// called by our ImageDownloader when an icon is ready to be displayed
+- (void)expertImageDidLoad:(NSIndexPath *)indexPath
+{
+    ImageDownloader *imageDownloader = [imageDownloadsInProgress objectForKey:indexPath];
+    if (imageDownloader != nil)
+    {
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:imageDownloader.indexPathInTableView];
+        
+        // Display the newly loaded image
+        cell.imageView.image = imageDownloader.expert.image;
+    }
+}
+
+
+// this method is used in case the user scrolled into a set of cells that don't have their app icons yet
+- (void)loadImagesForOnscreenRows
+{
+    if ([self.experts count] > 0)
+    {
+        NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+        for (NSIndexPath *indexPath in visiblePaths)
+        {
+            Expert *expert = [self.experts objectAtIndex:indexPath.row];
+            
+            if (!expert.image) // avoid the app icon download if the app already has an icon
+            {
+                [self startIconDownload:expert forIndexPath:indexPath];
+            }
+        }
+    }
+}
+
+#pragma mark - Deferred image loading (UIScrollViewDelegate)
+
+// Load images for all onscreen rows when scrolling is finished
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate)
+	{
+        [self loadImagesForOnscreenRows];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self loadImagesForOnscreenRows];
+}
+
 
 /*
  // Override to support conditional editing of the table view.

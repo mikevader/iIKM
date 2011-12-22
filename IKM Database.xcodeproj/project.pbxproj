@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DD08DE78149F9DC300B0A2FA /* TextDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD08DE77149F9DC300B0A2FA /* TextDownloader.m */; };
+		DD08DE7C14A25D7B00B0A2FA /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD08DE7B14A25D7B00B0A2FA /* ImageDownloader.m */; };
+		DD08DE7E14A2605600B0A2FA /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DD08DE7D14A2605600B0A2FA /* Placeholder.png */; };
 		DD587690146D27C300AE263A /* Expert.m in Sources */ = {isa = PBXBuildFile; fileRef = DD58768F146D27C300AE263A /* Expert.m */; };
 		DDA6ABF0146A7E2700383B11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABEF146A7E2700383B11 /* UIKit.framework */; };
 		DDA6ABF2146A7E2700383B11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABF1146A7E2700383B11 /* Foundation.framework */; };
@@ -47,6 +49,9 @@
 /* Begin PBXFileReference section */
 		DD08DE76149F9DC300B0A2FA /* TextDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDownloader.h; sourceTree = "<group>"; };
 		DD08DE77149F9DC300B0A2FA /* TextDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDownloader.m; sourceTree = "<group>"; };
+		DD08DE7A14A25D7B00B0A2FA /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
+		DD08DE7B14A25D7B00B0A2FA /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		DD08DE7D14A2605600B0A2FA /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		DD58768E146D27C300AE263A /* Expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expert.h; sourceTree = "<group>"; };
 		DD58768F146D27C300AE263A /* Expert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expert.m; sourceTree = "<group>"; };
 		DDA6ABEB146A7E2700383B11 /* IKM Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IKM Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD08DE7F14A260BF00B0A2FA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DD08DE7D14A2605600B0A2FA /* Placeholder.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		DD58768D146D279100AE263A /* IKMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,8 @@
 			children = (
 				DD08DE76149F9DC300B0A2FA /* TextDownloader.h */,
 				DD08DE77149F9DC300B0A2FA /* TextDownloader.m */,
+				DD08DE7A14A25D7B00B0A2FA /* ImageDownloader.h */,
+				DD08DE7B14A25D7B00B0A2FA /* ImageDownloader.m */,
 				DDA6ABFE146A7E2700383B11 /* AppDelegate.h */,
 				DDA6ABFF146A7E2700383B11 /* AppDelegate.m */,
 				DDA6AC01146A7E2700383B11 /* MainStoryboard_iPhone.storyboard */,
@@ -182,6 +197,7 @@
 		DDA6ABF6146A7E2700383B11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DD08DE7F14A260BF00B0A2FA /* Images */,
 				DDA6ABF7146A7E2700383B11 /* IKM Database-Info.plist */,
 				DDA6ABF8146A7E2700383B11 /* InfoPlist.strings */,
 				DDA6ABFB146A7E2700383B11 /* main.m */,
@@ -287,6 +303,7 @@
 				DDA6AC0D146A7E2700383B11 /* first@2x.png in Resources */,
 				DDA6AC12146A7E2700383B11 /* second.png in Resources */,
 				DDA6AC14146A7E2700383B11 /* second@2x.png in Resources */,
+				DD08DE7E14A2605600B0A2FA /* Placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +348,7 @@
 				DDD8BB18146AD9D500BF504D /* ExpertTableViewController.m in Sources */,
 				DD587690146D27C300AE263A /* Expert.m in Sources */,
 				DD08DE78149F9DC300B0A2FA /* TextDownloader.m in Sources */,
+				DD08DE7C14A25D7B00B0A2FA /* ImageDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +412,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Michael MÃ¼hlebach (5MNL4D8LS2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -409,6 +428,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "43A4495A-A8AF-4FFE-942B-04790DAD6276";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,6 +440,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Michael MÃ¼hlebach (5MNL4D8LS2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -429,6 +450,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "43A4495A-A8AF-4FFE-942B-04790DAD6276";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

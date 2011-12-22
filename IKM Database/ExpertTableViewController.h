@@ -11,10 +11,13 @@
 #import "Expert.h"
 #import "FirstViewController.h"
 #import "IKMDatasource.h"
+#import "ImageDownloader.h"
 
-@interface ExpertTableViewController : UITableViewController
+@interface ExpertTableViewController : UITableViewController<ImageDownloaderDelegate>
 
 @property (strong, nonatomic) Skill* skill;
 @property (strong, nonatomic) NSArray* experts;
+@property (strong, nonatomic) NSMutableDictionary* imageDownloadsInProgress;
 
+- (void)startIconDownload:(Expert *)expert forIndexPath:(NSIndexPath *)indexPath;
 @end

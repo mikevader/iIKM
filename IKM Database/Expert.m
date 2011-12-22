@@ -16,8 +16,9 @@
 @synthesize username;
 @synthesize careerLevel;
 @synthesize residence;
-@synthesize picture;
+@synthesize imageURLString;
 @synthesize businessUnitName;
+@synthesize image;
 
 +(id)expertWithFirstName:(NSString*)firstName LastName:(NSString*)lastName
 {

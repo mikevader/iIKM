@@ -17,8 +17,9 @@
 @property (strong, nonatomic) NSString* username;
 @property (strong, nonatomic) NSString* careerLevel;
 @property (strong, nonatomic) NSString* residence;
-@property (strong, nonatomic) NSURL* picture;
+@property (strong, nonatomic) NSString* imageURLString;
 @property (strong, nonatomic) NSString* businessUnitName;
+@property (strong, nonatomic) UIImage* image;
 
 
 +(id)expertWithFirstName:(NSString*)firstName LastName:(NSString*)lastName;

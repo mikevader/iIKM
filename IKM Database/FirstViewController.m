@@ -40,8 +40,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    expertName.text = expert.firstName;
+    expertName.text = [NSString stringWithFormat:@"%@ %@", expert.firstName, expert.lastName];
     careerLevel.text = expert.careerLevel;
+    businessUnit.text = expert.businessUnitName;
+    picture.image = expert.image;
 }
 
 - (void)viewDidAppear:(BOOL)animated
