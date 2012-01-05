@@ -18,8 +18,9 @@
 @property (nonatomic, retain) NSMutableData *activeDownload;
 
 
--(void)startDownloadSkills;
--(NSSet*)listAllExpertsForSkill:(NSNumber*)skillGuid;
+- (void)startDownloadSkills;
+- (NSSet*)listAllExpertsForSkill:(NSNumber*)skillGuid;
+- (BOOL)isActiveDownload;
 - (void)handleError:(NSError *)error;
 
 @end

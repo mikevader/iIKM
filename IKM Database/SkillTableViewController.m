@@ -105,40 +105,53 @@
 	 If the requesting table view is the search display controller's table view, return the count of
      the filtered list, otherwise return the count of the main list.
 	 */
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        return [self.filteredSkills count];
+    int count = [self.filteredSkills count];
+    
+    if ([ikmWrapper isActiveDownload])
+    {
+        return 1;
     }
-	else
-	{
-        return [self.skills count];
-    }
+    
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *skillCellIdentifier = @"SkillCell";
+    static NSString *placeholderCellIdentifier = @"PlaceholderCell";
+
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+    // Add placeholder cell while waiting on table data
+    UITableViewCell *cell = nil;
     
-    Skill* skill = nil;
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        skill = [self.filteredSkills objectAtIndex:indexPath.row];
+    if ([ikmWrapper isActiveDownload])
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:placeholderCellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:placeholderCellIdentifier];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.detailTextLabel.textAlignment = UITextAlignmentCenter;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+
+        UILabel* label = (UILabel*)[cell viewWithTag:100];
+        label.text = @"Loading...";
     }
     else
     {
-        skill = [self.skills objectAtIndex:indexPath.row];
+        cell = [tableView dequeueReusableCellWithIdentifier:skillCellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:skillCellIdentifier];
+            //		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+
+        Skill* skill = nil;
+        skill = [self.filteredSkills objectAtIndex:indexPath.row];
+        
+        // Configure the cell...
+        UILabel* label = (UILabel*)[cell viewWithTag:100];
+        label.text = skill.name;
     }
-    
-    // Configure the cell...
-    UILabel* label = (UILabel*)[cell viewWithTag:100];
-    label.text = skill.name;
-    cell.textLabel.text = skill.name;
     
     return cell;
 }
@@ -146,16 +159,18 @@
 - (void)skillsDidLoad:(NSArray *)skills
 {
     self.skills = skills;
-    self.filteredSkills = [NSMutableArray arrayWithCapacity:[self.skills count]];
+    self.filteredSkills = [NSMutableArray arrayWithArray:self.skills];
     [self.tableView reloadData];
 }
 
 - (IBAction)reloadFromServer:(id)sender {
     [ikmWrapper startDownloadSkills];
+    [self.tableView reloadData];
 }
 
 #pragma mark -
 #pragma mark Content Filtering
+
 
 - (void)filterContentForSearchText:(NSString*)searchText
 {
@@ -168,16 +183,30 @@
 	/*
 	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
 	 */
-	for (Skill *skill in skills)
+	for (Skill *skill in self.skills)
 	{
         NSComparisonResult result = [skill.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-        if (result == NSOrderedSame)
+        if (searchText == nil || result == NSOrderedSame)
         {
             [self.filteredSkills addObject:skill];
 		}
 	}
 }
 
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [self filterContentForSearchText:searchText];
+    [self.tableView reloadData];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSString* searchText = searchBar.text;
+    
+    [self filterContentForSearchText:searchText];
+    
+    [self.tableView reloadData];
+}
 
 #pragma mark -
 #pragma mark UISearchDisplayController Delegate Methods
@@ -250,24 +279,6 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 
-    UIViewController *detailsViewController = [[UIViewController alloc] init];
-    
-	/*
-	 If the requesting table view is the search display controller's table view, configure the next view controller using the filtered content, otherwise use the main list.
-	 */
-	Skill *skill = nil;
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        skill = [self.filteredSkills objectAtIndex:indexPath.row];
-    }
-	else
-	{
-        skill = [self.skills objectAtIndex:indexPath.row];
-    }
-	detailsViewController.title = product.name;
-    
-    [[self navigationController] pushViewController:detailsViewController animated:YES];
-
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -276,7 +287,7 @@
     {
         ExpertTableViewController* expertViewController = segue.destinationViewController;
         NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
-        Skill* skill = [skills objectAtIndex:indexPath.row];
+        Skill* skill = [self.filteredSkills objectAtIndex:indexPath.row];
         expertViewController.skill = skill;
     }
 }

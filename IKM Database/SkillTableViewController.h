@@ -18,4 +18,8 @@
 @property (strong, nonatomic) NSArray* skills;
 @property (strong, nonatomic) NSMutableArray* filteredSkills;
 
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
+
 @end

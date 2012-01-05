@@ -164,16 +164,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" multipleTouchEnabled="YES" contentMode="redraw" id="E8y-3N-nDm">
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="dEi-nr-fLv">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <outlet property="delegate" destination="07K-Aa-UtV" id="szW-77-sgx"/>
+                                <outlet property="delegate" destination="07K-Aa-UtV" id="LJg-dW-Buk"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Mhl-ZC-SKl" rowHeight="44" style="IBUITableViewCellStyleDefault" id="kdG-h1-npa">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SkillCell" textLabel="Mhl-ZC-SKl" rowHeight="44" style="IBUITableViewCellStyleDefault" id="kdG-h1-npa">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -194,7 +194,29 @@
                                     <segue destination="laY-fG-Gdj" kind="push" identifier="ShowExpert" id="CPS-mn-5RA"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaceholderCell" textLabel="DPc-fn-MrO" rowHeight="44" style="IBUITableViewCellStyleDefault" id="jJ3-Ov-Sjy">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DPc-fn-MrO">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="07K-Aa-UtV" id="5Zy-na-uhV"/>
+                            <outlet property="delegate" destination="07K-Aa-UtV" id="6gO-aD-ssK"/>
+                        </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Skills" id="UzS-AO-0i2"/>
                     <navigationItem key="navigationItem" title="Skills" id="duf-4b-gK1">
@@ -204,19 +226,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="Jjw-Tw-pvj" id="1HI-LR-axL"/>
-                    </connections>
                 </tableViewController>
-                <searchDisplayController id="Jjw-Tw-pvj">
-                    <connections>
-                        <outlet property="delegate" destination="07K-Aa-UtV" id="Ei5-xb-eve"/>
-                        <outlet property="searchBar" destination="E8y-3N-nDm" id="VE6-Fq-5e5"/>
-                        <outlet property="searchContentsController" destination="07K-Aa-UtV" id="oet-FW-K9e"/>
-                        <outlet property="searchResultsDataSource" destination="07K-Aa-UtV" id="udg-od-GOU"/>
-                        <outlet property="searchResultsDelegate" destination="07K-Aa-UtV" id="dPz-tR-lGc"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="724" y="-649"/>
         </scene>

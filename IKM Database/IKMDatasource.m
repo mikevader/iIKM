@@ -28,12 +28,12 @@ NSMutableSet* skills;
 
 -(void)startDownloadSkills
 {
-    NSString* urlString = @"http://192.168.3.50:8084/ikm/skill";
+    NSString* urlString = @"http://localhost:8084/ikm/skill";
     self.activeDownload = [NSMutableData data];
     
     NSURL* url = [NSURL URLWithString:urlString];
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30];
     
     skillConnection = [NSURLConnection connectionWithRequest:request delegate:self];
     
@@ -53,12 +53,12 @@ NSMutableSet* skills;
 // -------------------------------------------------------------------------------
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    //self.activeDownload = nil;
     self.skillConnection = nil;   // release our connection
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;   
 
     NSError* jsonParsingError = nil;
     NSDictionary* skillArray = [NSJSONSerialization JSONObjectWithData:self.activeDownload options:0 error:&jsonParsingError];
+    self.activeDownload = nil;
     
     if (jsonParsingError) {
         [self handleError:jsonParsingError];
@@ -85,6 +85,11 @@ NSMutableSet* skills;
     
     
     [delegate skillsDidLoad:[skills allObjects]];
+}
+
+- (BOOL)isActiveDownload
+{
+    return self.activeDownload != nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

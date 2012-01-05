@@ -117,7 +117,6 @@
 		DD08DE7F14A260BF00B0A2FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DD08DE7D14A2605600B0A2FA /* Placeholder.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -168,28 +167,22 @@
 		DDA6ABF5146A7E2700383B11 /* IKM Database */ = {
 			isa = PBXGroup;
 			children = (
-				DD08DE76149F9DC300B0A2FA /* TextDownloader.h */,
-				DD08DE77149F9DC300B0A2FA /* TextDownloader.m */,
-				DD08DE7A14A25D7B00B0A2FA /* ImageDownloader.h */,
-				DD08DE7B14A25D7B00B0A2FA /* ImageDownloader.m */,
 				DDA6ABFE146A7E2700383B11 /* AppDelegate.h */,
 				DDA6ABFF146A7E2700383B11 /* AppDelegate.m */,
 				DDA6AC01146A7E2700383B11 /* MainStoryboard_iPhone.storyboard */,
 				DDA6AC04146A7E2700383B11 /* MainStoryboard_iPad.storyboard */,
 				DDA6AC07146A7E2700383B11 /* FirstViewController.h */,
 				DDA6AC08146A7E2700383B11 /* FirstViewController.m */,
-				DDA6AC0A146A7E2700383B11 /* first.png */,
-				DDA6AC0C146A7E2700383B11 /* first@2x.png */,
 				DDA6AC0E146A7E2700383B11 /* SecondViewController.h */,
 				DDA6AC0F146A7E2700383B11 /* SecondViewController.m */,
-				DDA6AC11146A7E2700383B11 /* second.png */,
-				DDA6AC13146A7E2700383B11 /* second@2x.png */,
-				DD58768D146D279100AE263A /* IKMDB */,
-				DDA6ABF6146A7E2700383B11 /* Supporting Files */,
 				DDA6AC42146AA8CF00383B11 /* SkillTableViewController.h */,
 				DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */,
 				DDD8BB16146AD9D500BF504D /* ExpertTableViewController.h */,
 				DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */,
+				DD58768D146D279100AE263A /* IKMDB */,
+				DDC8DBBF14B5A3B90018D403 /* Util */,
+				DDC8DBC014B5A3E10018D403 /* Images */,
+				DDA6ABF6146A7E2700383B11 /* Supporting Files */,
 			);
 			path = "IKM Database";
 			sourceTree = "<group>";
@@ -223,6 +216,29 @@
 				DDA6AC24146A7E2700383B11 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDC8DBBF14B5A3B90018D403 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				DD08DE76149F9DC300B0A2FA /* TextDownloader.h */,
+				DD08DE77149F9DC300B0A2FA /* TextDownloader.m */,
+				DD08DE7A14A25D7B00B0A2FA /* ImageDownloader.h */,
+				DD08DE7B14A25D7B00B0A2FA /* ImageDownloader.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		DDC8DBC014B5A3E10018D403 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DD08DE7D14A2605600B0A2FA /* Placeholder.png */,
+				DDA6AC0A146A7E2700383B11 /* first.png */,
+				DDA6AC0C146A7E2700383B11 /* first@2x.png */,
+				DDA6AC11146A7E2700383B11 /* second.png */,
+				DDA6AC13146A7E2700383B11 /* second@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
