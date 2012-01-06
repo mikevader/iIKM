@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Skill.h"
 #import "Expert.h"
-#import "FirstViewController.h"
+#import "ExpertViewController.h"
 #import "IKMDatasource.h"
 #import "ImageDownloader.h"
+#import "ExpertsDownloader.h"
 
-@interface ExpertTableViewController : UITableViewController<ImageDownloaderDelegate>
+@interface ExpertTableViewController : UITableViewController<ImageDownloaderDelegate, ExpertsDownloaderDelegate>
 
 @property (strong, nonatomic) Skill* skill;
 @property (strong, nonatomic) NSArray* experts;

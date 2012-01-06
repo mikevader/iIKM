@@ -159,6 +159,13 @@
 - (void)skillsDidLoad:(NSArray *)skills
 {
     self.skills = skills;
+    
+    self.skills = [self.skills sortedArrayUsingComparator:^(id obj1, id obj2) {
+        NSComparisonResult result = [[obj1 name] compare:[obj2 name]];
+        
+        return result;
+    }];
+    
     self.filteredSkills = [NSMutableArray arrayWithArray:self.skills];
     [self.tableView reloadData];
 }
@@ -185,8 +192,8 @@
 	 */
 	for (Skill *skill in self.skills)
 	{
-        NSComparisonResult result = [skill.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-        if (searchText == nil || result == NSOrderedSame)
+        NSRange result = [skill.name rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if (searchText == nil || [searchText isEqualToString:@""] || result.location != NSNotFound)
         {
             [self.filteredSkills addObject:skill];
 		}
@@ -204,8 +211,14 @@
     NSString* searchText = searchBar.text;
     
     [self filterContentForSearchText:searchText];
-    
     [self.tableView reloadData];
+    
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
 }
 
 #pragma mark -

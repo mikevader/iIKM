@@ -8,6 +8,7 @@
 
 #import "ExpertTableViewController.h"
 #import "ImageDownloader.h"
+#import "ExpertsDownloader.h"
 
 
 @implementation ExpertTableViewController
@@ -39,9 +40,10 @@
 {
     [super viewDidLoad];
     
-    IKMDatasource* ikmWrapper = [[IKMDatasource alloc] init];
-    
-    experts = [[ikmWrapper listAllExpertsForSkill:skill.guid] allObjects];
+    ExpertsDownloader* expertsLoader = [[ExpertsDownloader alloc] init];
+    expertsLoader.delegate = self;
+
+    [expertsLoader startDownload];
     
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     
@@ -114,7 +116,7 @@
     
     Expert* expert = [experts objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [expert.firstName stringByAppendingString:expert.lastName];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@, %@", expert.lastName, expert.firstName];
     
     
     // Only load cached images; defer new downloads until scrolling ends
@@ -165,6 +167,26 @@
         // Display the newly loaded image
         cell.imageView.image = imageDownloader.expert.image;
     }
+}
+
+-(void)expertsDidLoad:(NSArray *)experts
+{
+    self.experts = experts;
+    
+    self.experts = [self.experts sortedArrayUsingComparator:^(id obj1, id obj2) {
+        NSComparisonResult result = [[obj1 lastName] compare:[obj2 lastName]];
+        
+        if (result == NSOrderedSame)
+        {
+            return [[obj1 firstName] compare:[obj2 firstName]];
+        }
+        else
+        {
+            return result;
+        }
+    }];
+
+    [self.tableView reloadData];
 }
 
 
@@ -257,7 +279,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    FirstViewController* expertViewController = segue.destinationViewController;
+    ExpertViewController* expertViewController = segue.destinationViewController;
     NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
     Expert* expert = [experts objectAtIndex:indexPath.row];
     expertViewController.expert = expert;

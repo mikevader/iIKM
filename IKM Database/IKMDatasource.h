@@ -12,6 +12,9 @@
 @protocol SkillDownloaderDelegate;
 
 @interface IKMDatasource : NSObject
+{
+}
+
 
 @property (strong, nonatomic) NSURLConnection *skillConnection;
 @property (nonatomic, assign) id <SkillDownloaderDelegate> delegate;

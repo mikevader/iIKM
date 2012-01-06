@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Expert : NSObject
+{
+    
+}
 
 
 @property (strong, nonatomic) NSNumber* guid;

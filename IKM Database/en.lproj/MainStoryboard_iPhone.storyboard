@@ -9,7 +9,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajD-oU-t1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="Dda-RY-9QV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Skills" id="jqn-LG-103"/>
+                    <tabBarItem key="tabBarItem" tag="1" systemItem="search" id="jqn-LG-103"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fwP-Cy-QBx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -18,7 +18,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="312" y="-649"/>
+            <point key="canvasLocation" x="-1144" y="-817"/>
         </scene>
         <scene sceneID="r87-c4-Xaz">
             <objects>
@@ -52,18 +52,18 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="IMc-zd-ptK"/>
+                    <tabBarItem key="tabBarItem" tag="1" systemItem="search" id="IMc-zd-ptK"/>
                     <navigationItem key="navigationItem" title="Experts" id="HwW-Jd-JVh">
                         <barButtonItem key="backBarButtonItem" title="Skills" id="Phd-0a-xEZ"/>
                     </navigationItem>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1614" y="-762"/>
+            <point key="canvasLocation" x="158" y="-930"/>
         </scene>
         <scene sceneID="aBF-HN-XbF">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5r-yr-sfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="TtG-1F-bBz" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController id="TtG-1F-bBz" customClass="ExpertViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkO-iy-qd2">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,7 +154,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2102" y="-762"/>
+            <point key="canvasLocation" x="646" y="-930"/>
         </scene>
         <scene sceneID="PmV-R8-ysp">
             <objects>
@@ -218,7 +218,7 @@
                             <outlet property="delegate" destination="07K-Aa-UtV" id="6gO-aD-ssK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Skills" id="UzS-AO-0i2"/>
+                    <tabBarItem key="tabBarItem" tag="1" systemItem="search" id="UzS-AO-0i2"/>
                     <navigationItem key="navigationItem" title="Skills" id="duf-4b-gK1">
                         <barButtonItem key="rightBarButtonItem" title="Reload" id="Rhi-Vd-iHX">
                             <connections>
@@ -228,12 +228,12 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="724" y="-649"/>
+            <point key="canvasLocation" x="-732" y="-817"/>
         </scene>
         <scene sceneID="13">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
-                <viewController title="Second" id="3" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController title="Second" id="3" customClass="TestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,14 +272,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" tag="100" title="Test" image="second.png" id="6"/>
                     <connections>
                         <outlet property="requestUrl" destination="NI9-SD-RRc" id="jMJ-WU-8Xe"/>
                         <outlet property="resultText" destination="92D-Zo-ld0" id="uVN-s9-xtC"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="653" y="498"/>
+            <point key="canvasLocation" x="-803" y="330"/>
         </scene>
         <scene sceneID="15">
             <objects>
@@ -292,23 +292,23 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="Dda-RY-9QV" kind="relationship" relationship="viewControllers" id="cv0-jg-txb"/>
+                        <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-164" y="204"/>
+            <point key="canvasLocation" x="-1620" y="36"/>
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="16" height="16"/>
+        <image name="second.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="ExpertTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpertTableViewController.h"/>
         </class>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+        <class className="ExpertViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpertViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="businessUnit" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="careerLevel" candidateClass="UILabel"/>
@@ -316,15 +316,15 @@
                 <relationship kind="outlet" name="picture" candidateClass="UIImageView"/>
             </relationships>
         </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+        <class className="SkillTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SkillTableViewController.h"/>
+        </class>
+        <class className="TestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="requestUrl" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="resultText" candidateClass="UITextView"/>
             </relationships>
-        </class>
-        <class className="SkillTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SkillTableViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -1,47 +1,49 @@
 //
-//  IKMDatasource.m
+//  ExpertDownloader.m
 //  IKM Database
 //
-//  Created by Michael Mühlebach on 11/9/11.
-//  Copyright (c) 2011 Zühlke Engineering AG. All rights reserved.
+//  Created by Michael Mühlebach on 1/5/12.
+//  Copyright (c) 2012 Zühlke Engineering AG. All rights reserved.
 //
 
-#import "IKMDatasource.h"
-#import "Skill.h"
+#import "ExpertsDownloader.h"
 #import "Expert.h"
 
-@implementation IKMDatasource
+@implementation ExpertsDownloader
 
-@synthesize skillConnection;
+@synthesize experts;
 @synthesize delegate;
 @synthesize activeDownload;
-
-NSMutableSet* skills;
-
+@synthesize connection;
 
 -(id)init
 {
     self = [super init];
-    skills = [[NSMutableSet alloc] init];
+    experts = [[NSMutableArray alloc] init];
     return self;
 }
 
--(void)startDownloadSkills
+-(void)startDownload
 {
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSString* urlString = [NSString stringWithFormat:@"%@/skill", [defaults stringForKey:@"IKMServerUrl"]];
-    NSLog(@"Server URL: %@", urlString);
     self.activeDownload = [NSMutableData data];
-    
+
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString* urlString = [NSString stringWithFormat:@"%@/expert?skillidlist=@%", [defaults stringForKey:@"IKMServerUrl"], @"{11, 12}"];
+    NSLog(@"Server URL: %@", urlString);
     NSURL* url = [NSURL URLWithString:urlString];
-    
     NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30];
-    
-    skillConnection = [NSURLConnection connectionWithRequest:request delegate:self];
+
+    self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
+-(void)cancelDownload
+{
+    [self.connection cancel];
+    self.connection = nil;
+    self.activeDownload = nil;
+}
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
@@ -53,9 +55,9 @@ NSMutableSet* skills;
 // -------------------------------------------------------------------------------
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    self.skillConnection = nil;   // release our connection
+    self.connection = nil;   // release our connection
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;   
-
+    
     NSError* jsonParsingError = nil;
     NSDictionary* skillArray = [NSJSONSerialization JSONObjectWithData:self.activeDownload options:0 error:&jsonParsingError];
     self.activeDownload = nil;
@@ -65,22 +67,24 @@ NSMutableSet* skills;
     }
     else
     {
-        for (NSDictionary* dict in [skillArray objectForKey:@"skills"]) {
+        for (NSDictionary* dict in [skillArray objectForKey:@"experts"]) {
             
             NSNumber* guid = [NSNumber numberWithInt:[[dict objectForKey:@"guid"] intValue]];
-            NSString* name = [dict objectForKey:@"name"];
-            NSString* comment = [dict objectForKey:@"comment"];
+            NSString* firstname = [dict objectForKey:@"firstName"];
+            NSString* lastname = [dict objectForKey:@"lastName"];
+            NSString* businessUnit = [dict objectForKey:@"businessUnitName"];
             
-            Skill* skill = [Skill skillWithId:guid andName:name];
-            skill.comment = comment;
+            Expert* expert = [Expert expertWithFirstName:firstname LastName:lastname];
+            expert.guid = guid;
+            expert.businessUnitName = businessUnit;
             
-            [skills addObject:skill];
+            [self.experts addObject:expert];
             
             NSLog(@"Added: %@", [dict description]);
         }
     }
     
-    [delegate skillsDidLoad:[skills allObjects]];
+    [delegate expertsDidLoad:experts];
 }
 
 - (BOOL)isActiveDownload
@@ -108,7 +112,8 @@ NSMutableSet* skills;
         [self handleError:error];
     }
     
-    self.skillConnection = nil;   // release our connection
+    self.connection = nil;   // release our connection
+    self.activeDownload = nil;
 }
 
 
@@ -124,19 +129,6 @@ NSMutableSet* skills;
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
     [alertView show];
-}
-
-
-
-
-
--(NSSet*)listAllExpertsForSkill:(NSNumber*)skillGuid
-{
-    NSMutableSet* experts = [[NSMutableSet alloc] init];
-    
-    [experts addObject:[Expert expertWithFirstName:@"Michael" LastName:@"Mühlebach"]];
-    
-    return experts;
 }
 
 @end

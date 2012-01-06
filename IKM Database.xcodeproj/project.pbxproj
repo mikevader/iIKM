@@ -10,6 +10,7 @@
 		DD08DE78149F9DC300B0A2FA /* TextDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD08DE77149F9DC300B0A2FA /* TextDownloader.m */; };
 		DD08DE7C14A25D7B00B0A2FA /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD08DE7B14A25D7B00B0A2FA /* ImageDownloader.m */; };
 		DD08DE7E14A2605600B0A2FA /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DD08DE7D14A2605600B0A2FA /* Placeholder.png */; };
+		DD25012514B60B8300E215A7 /* ExpertsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD25012414B60B8300E215A7 /* ExpertsDownloader.m */; };
 		DD587690146D27C300AE263A /* Expert.m in Sources */ = {isa = PBXBuildFile; fileRef = DD58768F146D27C300AE263A /* Expert.m */; };
 		DDA6ABF0146A7E2700383B11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABEF146A7E2700383B11 /* UIKit.framework */; };
 		DDA6ABF2146A7E2700383B11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6ABF1146A7E2700383B11 /* Foundation.framework */; };
@@ -19,10 +20,10 @@
 		DDA6AC00146A7E2700383B11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6ABFF146A7E2700383B11 /* AppDelegate.m */; };
 		DDA6AC03146A7E2700383B11 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC01146A7E2700383B11 /* MainStoryboard_iPhone.storyboard */; };
 		DDA6AC06146A7E2700383B11 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC04146A7E2700383B11 /* MainStoryboard_iPad.storyboard */; };
-		DDA6AC09146A7E2700383B11 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC08146A7E2700383B11 /* FirstViewController.m */; };
+		DDA6AC09146A7E2700383B11 /* ExpertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC08146A7E2700383B11 /* ExpertViewController.m */; };
 		DDA6AC0B146A7E2700383B11 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC0A146A7E2700383B11 /* first.png */; };
 		DDA6AC0D146A7E2700383B11 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC0C146A7E2700383B11 /* first@2x.png */; };
-		DDA6AC10146A7E2700383B11 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC0F146A7E2700383B11 /* SecondViewController.m */; };
+		DDA6AC10146A7E2700383B11 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC0F146A7E2700383B11 /* TestViewController.m */; };
 		DDA6AC12146A7E2700383B11 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC11146A7E2700383B11 /* second.png */; };
 		DDA6AC14146A7E2700383B11 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDA6AC13146A7E2700383B11 /* second@2x.png */; };
 		DDA6AC1C146A7E2700383B11 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA6AC1B146A7E2700383B11 /* SenTestingKit.framework */; };
@@ -33,6 +34,7 @@
 		DDA6AC34146A818E00383B11 /* IKMDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC33146A818E00383B11 /* IKMDatasource.m */; };
 		DDA6AC37146A834000383B11 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC36146A834000383B11 /* Skill.m */; };
 		DDA6AC44146AA8CF00383B11 /* SkillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */; };
+		DDB4043614B747DB009F6A09 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDB4043514B747DB009F6A09 /* Settings.bundle */; };
 		DDD8BB18146AD9D500BF504D /* ExpertTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		DD08DE7A14A25D7B00B0A2FA /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
 		DD08DE7B14A25D7B00B0A2FA /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
 		DD08DE7D14A2605600B0A2FA /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		DD25012314B60B8300E215A7 /* ExpertsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertsDownloader.h; sourceTree = "<group>"; };
+		DD25012414B60B8300E215A7 /* ExpertsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertsDownloader.m; sourceTree = "<group>"; };
 		DD58768E146D27C300AE263A /* Expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expert.h; sourceTree = "<group>"; };
 		DD58768F146D27C300AE263A /* Expert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expert.m; sourceTree = "<group>"; };
 		DDA6ABEB146A7E2700383B11 /* IKM Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IKM Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,12 +70,12 @@
 		DDA6ABFF146A7E2700383B11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DDA6AC02146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DDA6AC05146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		DDA6AC07146A7E2700383B11 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		DDA6AC08146A7E2700383B11 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		DDA6AC07146A7E2700383B11 /* ExpertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpertViewController.h; sourceTree = "<group>"; };
+		DDA6AC08146A7E2700383B11 /* ExpertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpertViewController.m; sourceTree = "<group>"; };
 		DDA6AC0A146A7E2700383B11 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		DDA6AC0C146A7E2700383B11 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		DDA6AC0E146A7E2700383B11 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		DDA6AC0F146A7E2700383B11 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DDA6AC0E146A7E2700383B11 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		DDA6AC0F146A7E2700383B11 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		DDA6AC11146A7E2700383B11 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DDA6AC13146A7E2700383B11 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		DDA6AC1A146A7E2700383B11 /* IKM DatabaseTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IKM DatabaseTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +90,7 @@
 		DDA6AC36146A834000383B11 /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
 		DDA6AC42146AA8CF00383B11 /* SkillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTableViewController.h; sourceTree = "<group>"; };
 		DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTableViewController.m; sourceTree = "<group>"; };
+		DDB4043514B747DB009F6A09 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DDD8BB16146AD9D500BF504D /* ExpertTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertTableViewController.h; sourceTree = "<group>"; };
 		DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,10 +176,10 @@
 				DDA6ABFF146A7E2700383B11 /* AppDelegate.m */,
 				DDA6AC01146A7E2700383B11 /* MainStoryboard_iPhone.storyboard */,
 				DDA6AC04146A7E2700383B11 /* MainStoryboard_iPad.storyboard */,
-				DDA6AC07146A7E2700383B11 /* FirstViewController.h */,
-				DDA6AC08146A7E2700383B11 /* FirstViewController.m */,
-				DDA6AC0E146A7E2700383B11 /* SecondViewController.h */,
-				DDA6AC0F146A7E2700383B11 /* SecondViewController.m */,
+				DDA6AC07146A7E2700383B11 /* ExpertViewController.h */,
+				DDA6AC08146A7E2700383B11 /* ExpertViewController.m */,
+				DDA6AC0E146A7E2700383B11 /* TestViewController.h */,
+				DDA6AC0F146A7E2700383B11 /* TestViewController.m */,
 				DDA6AC42146AA8CF00383B11 /* SkillTableViewController.h */,
 				DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */,
 				DDD8BB16146AD9D500BF504D /* ExpertTableViewController.h */,
@@ -195,6 +200,7 @@
 				DDA6ABF8146A7E2700383B11 /* InfoPlist.strings */,
 				DDA6ABFB146A7E2700383B11 /* main.m */,
 				DDA6ABFD146A7E2700383B11 /* IKM Database-Prefix.pch */,
+				DDB4043514B747DB009F6A09 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,6 +231,8 @@
 				DD08DE77149F9DC300B0A2FA /* TextDownloader.m */,
 				DD08DE7A14A25D7B00B0A2FA /* ImageDownloader.h */,
 				DD08DE7B14A25D7B00B0A2FA /* ImageDownloader.m */,
+				DD25012314B60B8300E215A7 /* ExpertsDownloader.h */,
+				DD25012414B60B8300E215A7 /* ExpertsDownloader.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 				DDA6AC12146A7E2700383B11 /* second.png in Resources */,
 				DDA6AC14146A7E2700383B11 /* second@2x.png in Resources */,
 				DD08DE7E14A2605600B0A2FA /* Placeholder.png in Resources */,
+				DDB4043614B747DB009F6A09 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,8 +365,8 @@
 			files = (
 				DDA6ABFC146A7E2700383B11 /* main.m in Sources */,
 				DDA6AC00146A7E2700383B11 /* AppDelegate.m in Sources */,
-				DDA6AC09146A7E2700383B11 /* FirstViewController.m in Sources */,
-				DDA6AC10146A7E2700383B11 /* SecondViewController.m in Sources */,
+				DDA6AC09146A7E2700383B11 /* ExpertViewController.m in Sources */,
+				DDA6AC10146A7E2700383B11 /* TestViewController.m in Sources */,
 				DDA6AC34146A818E00383B11 /* IKMDatasource.m in Sources */,
 				DDA6AC37146A834000383B11 /* Skill.m in Sources */,
 				DDA6AC44146AA8CF00383B11 /* SkillTableViewController.m in Sources */,
@@ -365,6 +374,7 @@
 				DD587690146D27C300AE263A /* Expert.m in Sources */,
 				DD08DE78149F9DC300B0A2FA /* TextDownloader.m in Sources */,
 				DD08DE7C14A25D7B00B0A2FA /* ImageDownloader.m in Sources */,
+				DD25012514B60B8300E215A7 /* ExpertsDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
