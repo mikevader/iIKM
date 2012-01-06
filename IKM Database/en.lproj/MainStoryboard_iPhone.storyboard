@@ -52,9 +52,8 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="1" systemItem="search" id="IMc-zd-ptK"/>
                     <navigationItem key="navigationItem" title="Experts" id="HwW-Jd-JVh">
-                        <barButtonItem key="backBarButtonItem" title="Skills" id="Phd-0a-xEZ"/>
+                        <barButtonItem key="backBarButtonItem" title="Experts" id="Phd-0a-xEZ"/>
                     </navigationItem>
                 </viewController>
             </objects>
@@ -218,7 +217,6 @@
                             <outlet property="delegate" destination="07K-Aa-UtV" id="6gO-aD-ssK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="1" systemItem="search" id="UzS-AO-0i2"/>
                     <navigationItem key="navigationItem" title="Skills" id="duf-4b-gK1">
                         <barButtonItem key="rightBarButtonItem" title="Reload" id="Rhi-Vd-iHX">
                             <connections>
