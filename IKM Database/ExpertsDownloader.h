@@ -23,6 +23,7 @@
 
 @property (nonatomic, retain) NSMutableData *activeDownload;
 @property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, retain) NSArray* queries;
 
 - (void)startDownload;
 - (void)cancelDownload;

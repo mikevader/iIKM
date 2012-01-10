@@ -302,8 +302,8 @@
         ExpertTableViewController* expertViewController = segue.destinationViewController;
         NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
         Skill* skill = [self.filteredSkills objectAtIndex:indexPath.row];
-        NSString* skillId = [SkillQuery skillQueryWithSkillId:skill.guid];
-        expertViewController.queries = [NSArray arrayWithObject:skillId];
+        SkillQuery* skillQuery = [SkillQuery skillQueryWithSkillId:skill.guid];
+        expertViewController.queries = [NSArray arrayWithObject:skillQuery];
     }
 }
 

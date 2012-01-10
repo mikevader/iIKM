@@ -14,6 +14,8 @@
 {
     SkillQuery* skillQuery = [[SkillQuery alloc] init];
     [skillQuery addQueryValue:skillId];
+    
+    return skillQuery;
 }
 
 -(id)init

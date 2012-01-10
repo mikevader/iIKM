@@ -15,6 +15,7 @@
 @synthesize delegate;
 @synthesize activeDownload;
 @synthesize connection;
+@synthesize queries;
 
 -(id)init
 {

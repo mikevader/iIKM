@@ -42,6 +42,7 @@
     
     ExpertsDownloader* expertsLoader = [[ExpertsDownloader alloc] init];
     expertsLoader.delegate = self;
+    expertsLoader.queries = queries;
 
     [expertsLoader startDownload];
     
