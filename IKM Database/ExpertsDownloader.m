@@ -25,10 +25,13 @@
 
 -(void)startDownload
 {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString* ikmServerUrl = [defaults stringForKey:@"IKMServerUrl"];
+    
     self.activeDownload = [NSMutableData data];
 
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSString* urlString = [NSString stringWithFormat:@"%@/expert?skillidlist=@%", [defaults stringForKey:@"IKMServerUrl"], @"{11, 12}"];
+    
+    NSString* urlString = [NSString stringWithFormat:@"%@/expert?skillidlist=@%", ikmServerUrl, @"{11, 12}"];
     NSLog(@"Server URL: %@", urlString);
     NSURL* url = [NSURL URLWithString:urlString];
     NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30];

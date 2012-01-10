@@ -16,7 +16,7 @@
 
 @interface ExpertTableViewController : UITableViewController<ImageDownloaderDelegate, ExpertsDownloaderDelegate>
 
-@property (strong, nonatomic) Skill* skill;
+@property (strong, nonatomic) NSArray* queries;
 @property (strong, nonatomic) NSArray* experts;
 @property (strong, nonatomic) NSMutableDictionary* imageDownloadsInProgress;
 

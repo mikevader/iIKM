@@ -12,7 +12,7 @@
 {
 }
 
-@property (strong, nonatomic) NSNumber* guid;
+@property (strong, nonatomic) NSString* guid;
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSString* preference;
 @property (strong, nonatomic) NSNumber* projectsCount;

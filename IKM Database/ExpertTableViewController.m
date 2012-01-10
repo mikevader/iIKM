@@ -13,7 +13,7 @@
 
 @implementation ExpertTableViewController
 
-@synthesize skill;
+@synthesize queries;
 @synthesize experts;
 @synthesize imageDownloadsInProgress;
 

@@ -24,10 +24,10 @@
     return self;
 }
 
-+(id)skillWithId:(NSNumber*)number andName:(NSString*)name
++(id)skillWithId:(NSString*)guid andName:(NSString*)name
 {
     Skill* skill = [[Skill alloc] init];
-    skill.guid = number;
+    skill.guid = guid;
     skill.name = name;
     
     return skill;

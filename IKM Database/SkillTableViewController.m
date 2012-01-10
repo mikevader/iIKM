@@ -7,6 +7,7 @@
 //
 
 #import "SkillTableViewController.h"
+#import "SkillQuery.h"
 
 
 @implementation SkillTableViewController
@@ -301,7 +302,8 @@
         ExpertTableViewController* expertViewController = segue.destinationViewController;
         NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
         Skill* skill = [self.filteredSkills objectAtIndex:indexPath.row];
-        expertViewController.skill = skill;
+        NSString* skillId = [SkillQuery skillQueryWithSkillId:skill.guid];
+        expertViewController.queries = [NSArray arrayWithObject:skillId];
     }
 }
 
