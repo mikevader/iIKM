@@ -224,6 +224,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="uiSearchBar" destination="dEi-nr-fLv" id="83V-AN-RmF"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="-732" y="-817"/>
@@ -316,6 +319,9 @@
         </class>
         <class className="SkillTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SkillTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="uiSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
         </class>
         <class className="TestViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestViewController.h"/>

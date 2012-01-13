@@ -60,6 +60,7 @@
 		DD08DE7D14A2605600B0A2FA /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		DD25012314B60B8300E215A7 /* ExpertsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertsDownloader.h; sourceTree = "<group>"; };
 		DD25012414B60B8300E215A7 /* ExpertsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertsDownloader.m; sourceTree = "<group>"; };
+		DD55BB3B14C0736D00CB4E9A /* skilldb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = skilldb.entitlements; sourceTree = "<group>"; };
 		DD58768E146D27C300AE263A /* Expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expert.h; sourceTree = "<group>"; };
 		DD58768F146D27C300AE263A /* Expert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expert.m; sourceTree = "<group>"; };
 		DDA6ABEB146A7E2700383B11 /* skilldb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skilldb.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +159,7 @@
 		DDA6ABE0146A7E2700383B11 = {
 			isa = PBXGroup;
 			children = (
+				DD55BB3B14C0736D00CB4E9A /* skilldb.entitlements */,
 				DDA6ABF5146A7E2700383B11 /* IKM Database */,
 				DDA6AC21146A7E2700383B11 /* IKM DatabaseTests */,
 				DDA6ABEE146A7E2700383B11 /* Frameworks */,
@@ -458,8 +460,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Michael MÃ¼hlebach (36C643K36R)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zuehlke Engineering AG";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -474,7 +476,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "AECE56F4-341A-49E4-9002-A457A7DED9EA";
+				PROVISIONING_PROFILE = "051586B6-E2AF-4EB7-9202-AC5438C30F43";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -486,8 +489,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Michael MÃ¼hlebach (36C643K36R)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zuehlke Engineering AG";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -496,7 +499,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "AECE56F4-341A-49E4-9002-A457A7DED9EA";
+				PROVISIONING_PROFILE = "051586B6-E2AF-4EB7-9202-AC5438C30F43";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -506,6 +510,7 @@
 		DDA6AC2D146A7E2700383B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = skilldb.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IKM Database/skilldb-Prefix.pch";
 				INFOPLIST_FILE = "IKM Database/skilldb-Info.plist";
@@ -518,6 +523,7 @@
 		DDA6AC2E146A7E2700383B11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = skilldb.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IKM Database/skilldb-Prefix.pch";
 				INFOPLIST_FILE = "IKM Database/skilldb-Info.plist";
