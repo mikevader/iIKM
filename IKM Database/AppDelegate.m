@@ -12,9 +12,63 @@
 
 @synthesize window = _window;
 
+
+- (void)setupByPreferences
+{
+    NSString *testValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"IKMServerUrl"];
+    if (testValue == nil)
+    {
+        // no default values have been set, create them here based on what's in our Settings bundle info
+        //
+        NSString *pathStr = [[NSBundle mainBundle] bundlePath];
+        NSString *settingsBundlePath = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+        NSString *finalPath = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+        
+        NSDictionary *settingsDict = [NSDictionary dictionaryWithContentsOfFile:finalPath];
+        NSArray *prefSpecifierArray = [settingsDict objectForKey:@"PreferenceSpecifiers"];
+        
+        NSString *ikmServerUrlDefault = nil;
+
+        NSDictionary *prefItem;
+        for (prefItem in prefSpecifierArray)
+        {
+            NSString *keyValueStr = [prefItem objectForKey:@"Key"];
+            id defaultValue = [prefItem objectForKey:@"DefaultValue"];
+            
+            if ([keyValueStr isEqualToString:@"IKMServerUrl"])
+            {
+                ikmServerUrlDefault = defaultValue;
+            }
+//            else if ([keyValueStr isEqualToString:kLastNameKey])
+//            {
+//                lastNameDefault = defaultValue;
+//            }
+//            else if ([keyValueStr isEqualToString:kNameColorKey])
+//            {
+//                nameColorDefault = defaultValue;
+//            }
+//            else if ([keyValueStr isEqualToString:kBackgroundColorKey])
+//            {
+//                backgroundColorDefault = defaultValue;
+//            }
+        }
+        
+        // since no default values have been set (i.e. no preferences file created), create it here     
+        NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     ikmServerUrlDefault, @"IKMServerUrl",
+                                     nil];
+        
+        [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    // we're ready to go, so lastly set the key preference values
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self setupByPreferences];
     return YES;
 }
 							

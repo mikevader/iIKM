@@ -14,6 +14,7 @@
 
 @synthesize skills;
 @synthesize filteredSkills;
+@synthesize uiSearchBar;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -159,6 +160,7 @@
 
 - (void)skillsDidLoad:(NSArray *)skills
 {
+    self.skills = nil;
     self.skills = skills;
     
     self.skills = [self.skills sortedArrayUsingComparator:^(id obj1, id obj2) {
@@ -168,12 +170,12 @@
     }];
     
     self.filteredSkills = [NSMutableArray arrayWithArray:self.skills];
+    
     [self.tableView reloadData];
 }
 
 - (IBAction)reloadFromServer:(id)sender {
     [ikmWrapper startDownloadSkills];
-    [self.tableView reloadData];
 }
 
 #pragma mark -

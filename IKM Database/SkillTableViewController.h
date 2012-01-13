@@ -17,9 +17,11 @@
 }
 @property (strong, nonatomic) NSArray* skills;
 @property (strong, nonatomic) NSMutableArray* filteredSkills;
+@property (weak, nonatomic) IBOutlet UISearchBar* uiSearchBar;
 
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
+- (void)filterContentForSearchText:(NSString*)searchText;
 
 @end
