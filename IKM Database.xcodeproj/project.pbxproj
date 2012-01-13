@@ -35,6 +35,10 @@
 		DDA6AC37146A834000383B11 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC36146A834000383B11 /* Skill.m */; };
 		DDA6AC44146AA8CF00383B11 /* SkillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */; };
 		DDB4043614B747DB009F6A09 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDB4043514B747DB009F6A09 /* Settings.bundle */; };
+		DDB4043A14BAE92C009F6A09 /* QueryParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB4043914BAE92C009F6A09 /* QueryParameter.m */; };
+		DDB4043D14BAE951009F6A09 /* SkillQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB4043C14BAE951009F6A09 /* SkillQuery.m */; };
+		DDB4043F14BC2D09009F6A09 /* skilldb57.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB4043E14BC2D09009F6A09 /* skilldb57.png */; };
+		DDB4044114BC2D0E009F6A09 /* skilldb114.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB4044014BC2D0E009F6A09 /* skilldb114.png */; };
 		DDD8BB18146AD9D500BF504D /* ExpertTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -56,16 +60,17 @@
 		DD08DE7D14A2605600B0A2FA /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		DD25012314B60B8300E215A7 /* ExpertsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertsDownloader.h; sourceTree = "<group>"; };
 		DD25012414B60B8300E215A7 /* ExpertsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertsDownloader.m; sourceTree = "<group>"; };
+		DD55BB3B14C0736D00CB4E9A /* skilldb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = skilldb.entitlements; sourceTree = "<group>"; };
 		DD58768E146D27C300AE263A /* Expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expert.h; sourceTree = "<group>"; };
 		DD58768F146D27C300AE263A /* Expert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expert.m; sourceTree = "<group>"; };
-		DDA6ABEB146A7E2700383B11 /* IKM Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IKM Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA6ABEB146A7E2700383B11 /* skilldb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skilldb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6ABEF146A7E2700383B11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDA6ABF1146A7E2700383B11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDA6ABF3146A7E2700383B11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DDA6ABF7146A7E2700383B11 /* IKM Database-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IKM Database-Info.plist"; sourceTree = "<group>"; };
+		DDA6ABF7146A7E2700383B11 /* skilldb-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "skilldb-Info.plist"; sourceTree = "<group>"; };
 		DDA6ABF9146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDA6ABFB146A7E2700383B11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DDA6ABFD146A7E2700383B11 /* IKM Database-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IKM Database-Prefix.pch"; sourceTree = "<group>"; };
+		DDA6ABFD146A7E2700383B11 /* skilldb-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "skilldb-Prefix.pch"; sourceTree = "<group>"; };
 		DDA6ABFE146A7E2700383B11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DDA6ABFF146A7E2700383B11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DDA6AC02146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -78,9 +83,9 @@
 		DDA6AC0F146A7E2700383B11 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		DDA6AC11146A7E2700383B11 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DDA6AC13146A7E2700383B11 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		DDA6AC1A146A7E2700383B11 /* IKM DatabaseTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IKM DatabaseTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA6AC1A146A7E2700383B11 /* skilldbTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skilldbTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6AC1B146A7E2700383B11 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DDA6AC23146A7E2700383B11 /* IKM DatabaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IKM DatabaseTests-Info.plist"; sourceTree = "<group>"; };
+		DDA6AC23146A7E2700383B11 /* skilldbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "skilldbTests-Info.plist"; sourceTree = "<group>"; };
 		DDA6AC25146A7E2700383B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDA6AC27146A7E2700383B11 /* IKM_DatabaseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IKM_DatabaseTests.h; sourceTree = "<group>"; };
 		DDA6AC28146A7E2700383B11 /* IKM_DatabaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IKM_DatabaseTests.m; sourceTree = "<group>"; };
@@ -91,6 +96,12 @@
 		DDA6AC42146AA8CF00383B11 /* SkillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTableViewController.h; sourceTree = "<group>"; };
 		DDA6AC43146AA8CF00383B11 /* SkillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTableViewController.m; sourceTree = "<group>"; };
 		DDB4043514B747DB009F6A09 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		DDB4043814BAE92C009F6A09 /* QueryParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryParameter.h; sourceTree = "<group>"; };
+		DDB4043914BAE92C009F6A09 /* QueryParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryParameter.m; sourceTree = "<group>"; };
+		DDB4043B14BAE951009F6A09 /* SkillQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillQuery.h; sourceTree = "<group>"; };
+		DDB4043C14BAE951009F6A09 /* SkillQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillQuery.m; sourceTree = "<group>"; };
+		DDB4043E14BC2D09009F6A09 /* skilldb57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skilldb57.png; path = ../skilldb57.png; sourceTree = "<group>"; };
+		DDB4044014BC2D0E009F6A09 /* skilldb114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skilldb114.png; path = ../skilldb114.png; sourceTree = "<group>"; };
 		DDD8BB16146AD9D500BF504D /* ExpertTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertTableViewController.h; sourceTree = "<group>"; };
 		DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +133,8 @@
 		DD08DE7F14A260BF00B0A2FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DDB4044014BC2D0E009F6A09 /* skilldb114.png */,
+				DDB4043E14BC2D09009F6A09 /* skilldb57.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -135,6 +148,10 @@
 				DDA6AC36146A834000383B11 /* Skill.m */,
 				DD58768E146D27C300AE263A /* Expert.h */,
 				DD58768F146D27C300AE263A /* Expert.m */,
+				DDB4043814BAE92C009F6A09 /* QueryParameter.h */,
+				DDB4043914BAE92C009F6A09 /* QueryParameter.m */,
+				DDB4043B14BAE951009F6A09 /* SkillQuery.h */,
+				DDB4043C14BAE951009F6A09 /* SkillQuery.m */,
 			);
 			name = IKMDB;
 			sourceTree = "<group>";
@@ -142,6 +159,7 @@
 		DDA6ABE0146A7E2700383B11 = {
 			isa = PBXGroup;
 			children = (
+				DD55BB3B14C0736D00CB4E9A /* skilldb.entitlements */,
 				DDA6ABF5146A7E2700383B11 /* IKM Database */,
 				DDA6AC21146A7E2700383B11 /* IKM DatabaseTests */,
 				DDA6ABEE146A7E2700383B11 /* Frameworks */,
@@ -152,8 +170,8 @@
 		DDA6ABEC146A7E2700383B11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDA6ABEB146A7E2700383B11 /* IKM Database.app */,
-				DDA6AC1A146A7E2700383B11 /* IKM DatabaseTests.octest */,
+				DDA6ABEB146A7E2700383B11 /* skilldb.app */,
+				DDA6AC1A146A7E2700383B11 /* skilldbTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,10 +214,10 @@
 			isa = PBXGroup;
 			children = (
 				DD08DE7F14A260BF00B0A2FA /* Images */,
-				DDA6ABF7146A7E2700383B11 /* IKM Database-Info.plist */,
+				DDA6ABF7146A7E2700383B11 /* skilldb-Info.plist */,
 				DDA6ABF8146A7E2700383B11 /* InfoPlist.strings */,
 				DDA6ABFB146A7E2700383B11 /* main.m */,
-				DDA6ABFD146A7E2700383B11 /* IKM Database-Prefix.pch */,
+				DDA6ABFD146A7E2700383B11 /* skilldb-Prefix.pch */,
 				DDB4043514B747DB009F6A09 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
@@ -218,7 +236,7 @@
 		DDA6AC22146A7E2700383B11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DDA6AC23146A7E2700383B11 /* IKM DatabaseTests-Info.plist */,
+				DDA6AC23146A7E2700383B11 /* skilldbTests-Info.plist */,
 				DDA6AC24146A7E2700383B11 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -252,9 +270,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DDA6ABEA146A7E2700383B11 /* IKM Database */ = {
+		DDA6ABEA146A7E2700383B11 /* skilldb */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDA6AC2C146A7E2700383B11 /* Build configuration list for PBXNativeTarget "IKM Database" */;
+			buildConfigurationList = DDA6AC2C146A7E2700383B11 /* Build configuration list for PBXNativeTarget "skilldb" */;
 			buildPhases = (
 				DDA6ABE7146A7E2700383B11 /* Sources */,
 				DDA6ABE8146A7E2700383B11 /* Frameworks */,
@@ -264,14 +282,14 @@
 			);
 			dependencies = (
 			);
-			name = "IKM Database";
+			name = skilldb;
 			productName = "IKM Database";
-			productReference = DDA6ABEB146A7E2700383B11 /* IKM Database.app */;
+			productReference = DDA6ABEB146A7E2700383B11 /* skilldb.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DDA6AC19146A7E2700383B11 /* IKM DatabaseTests */ = {
+		DDA6AC19146A7E2700383B11 /* skilldbTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDA6AC2F146A7E2700383B11 /* Build configuration list for PBXNativeTarget "IKM DatabaseTests" */;
+			buildConfigurationList = DDA6AC2F146A7E2700383B11 /* Build configuration list for PBXNativeTarget "skilldbTests" */;
 			buildPhases = (
 				DDA6AC15146A7E2700383B11 /* Sources */,
 				DDA6AC16146A7E2700383B11 /* Frameworks */,
@@ -283,9 +301,9 @@
 			dependencies = (
 				DDA6AC20146A7E2700383B11 /* PBXTargetDependency */,
 			);
-			name = "IKM DatabaseTests";
+			name = skilldbTests;
 			productName = "IKM DatabaseTests";
-			productReference = DDA6AC1A146A7E2700383B11 /* IKM DatabaseTests.octest */;
+			productReference = DDA6AC1A146A7E2700383B11 /* skilldbTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -297,7 +315,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Zühlke Engineering AG";
 			};
-			buildConfigurationList = DDA6ABE5146A7E2700383B11 /* Build configuration list for PBXProject "IKM Database" */;
+			buildConfigurationList = DDA6ABE5146A7E2700383B11 /* Build configuration list for PBXProject "skilldb" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -309,8 +327,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDA6ABEA146A7E2700383B11 /* IKM Database */,
-				DDA6AC19146A7E2700383B11 /* IKM DatabaseTests */,
+				DDA6ABEA146A7E2700383B11 /* skilldb */,
+				DDA6AC19146A7E2700383B11 /* skilldbTests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,6 +347,8 @@
 				DDA6AC14146A7E2700383B11 /* second@2x.png in Resources */,
 				DD08DE7E14A2605600B0A2FA /* Placeholder.png in Resources */,
 				DDB4043614B747DB009F6A09 /* Settings.bundle in Resources */,
+				DDB4043F14BC2D09009F6A09 /* skilldb57.png in Resources */,
+				DDB4044114BC2D0E009F6A09 /* skilldb114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +395,8 @@
 				DD08DE78149F9DC300B0A2FA /* TextDownloader.m in Sources */,
 				DD08DE7C14A25D7B00B0A2FA /* ImageDownloader.m in Sources */,
 				DD25012514B60B8300E215A7 /* ExpertsDownloader.m in Sources */,
+				DDB4043A14BAE92C009F6A09 /* QueryParameter.m in Sources */,
+				DDB4043D14BAE951009F6A09 /* SkillQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +413,7 @@
 /* Begin PBXTargetDependency section */
 		DDA6AC20146A7E2700383B11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DDA6ABEA146A7E2700383B11 /* IKM Database */;
+			target = DDA6ABEA146A7E2700383B11 /* skilldb */;
 			targetProxy = DDA6AC1F146A7E2700383B11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -438,8 +460,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Michael MÃ¼hlebach (5MNL4D8LS2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zuehlke Engineering AG";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -454,7 +476,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "43A4495A-A8AF-4FFE-942B-04790DAD6276";
+				PROVISIONING_PROFILE = "051586B6-E2AF-4EB7-9202-AC5438C30F43";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -466,8 +489,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Michael MÃ¼hlebach (5MNL4D8LS2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zuehlke Engineering AG";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -476,7 +499,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "43A4495A-A8AF-4FFE-942B-04790DAD6276";
+				PROVISIONING_PROFILE = "051586B6-E2AF-4EB7-9202-AC5438C30F43";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -486,10 +510,11 @@
 		DDA6AC2D146A7E2700383B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = skilldb.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IKM Database/IKM Database-Prefix.pch";
-				INFOPLIST_FILE = "IKM Database/IKM Database-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "IKM Database/skilldb-Prefix.pch";
+				INFOPLIST_FILE = "IKM Database/skilldb-Info.plist";
+				PRODUCT_NAME = skilldb;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -498,10 +523,11 @@
 		DDA6AC2E146A7E2700383B11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = skilldb.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IKM Database/IKM Database-Prefix.pch";
-				INFOPLIST_FILE = "IKM Database/IKM Database-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "IKM Database/skilldb-Prefix.pch";
+				INFOPLIST_FILE = "IKM Database/skilldb-Info.plist";
+				PRODUCT_NAME = skilldb;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -517,8 +543,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IKM Database/IKM Database-Prefix.pch";
-				INFOPLIST_FILE = "IKM DatabaseTests/IKM DatabaseTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "IKM DatabaseTests/skilldbTests-Info.plist";
+				PRODUCT_NAME = skilldbTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -534,8 +560,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IKM Database/IKM Database-Prefix.pch";
-				INFOPLIST_FILE = "IKM DatabaseTests/IKM DatabaseTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "IKM DatabaseTests/skilldbTests-Info.plist";
+				PRODUCT_NAME = skilldbTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -544,7 +570,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDA6ABE5146A7E2700383B11 /* Build configuration list for PBXProject "IKM Database" */ = {
+		DDA6ABE5146A7E2700383B11 /* Build configuration list for PBXProject "skilldb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDA6AC2A146A7E2700383B11 /* Debug */,
@@ -553,7 +579,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDA6AC2C146A7E2700383B11 /* Build configuration list for PBXNativeTarget "IKM Database" */ = {
+		DDA6AC2C146A7E2700383B11 /* Build configuration list for PBXNativeTarget "skilldb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDA6AC2D146A7E2700383B11 /* Debug */,
@@ -562,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDA6AC2F146A7E2700383B11 /* Build configuration list for PBXNativeTarget "IKM DatabaseTests" */ = {
+		DDA6AC2F146A7E2700383B11 /* Build configuration list for PBXNativeTarget "skilldbTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDA6AC30146A7E2700383B11 /* Debug */,
