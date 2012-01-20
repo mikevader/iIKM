@@ -26,7 +26,7 @@
 
 -(NSString*)queryName
 {
-    return @"skillidlist";
+    return @"skills";
 }
 
 @end

@@ -32,7 +32,7 @@
     self.activeDownload = [NSMutableData data];
 
     
-    NSString* urlString = [NSString stringWithFormat:@"%@/expert?skillidlist=@%", ikmServerUrl, @"{11, 12}"];
+    NSString* urlString = [NSString stringWithFormat:@"%@/expert/findBy?skills=%@", ikmServerUrl, @"%7B11,12%7D"];
     NSLog(@"Server URL: %@", urlString);
     NSURL* url = [NSURL URLWithString:urlString];
     NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30];
@@ -77,10 +77,12 @@
             NSString* firstname = [dict objectForKey:@"firstName"];
             NSString* lastname = [dict objectForKey:@"lastName"];
             NSString* businessUnit = [dict objectForKey:@"businessUnitName"];
+            NSString* pictureUrl = [dict objectForKey:@"pictureURL"];
             
             Expert* expert = [Expert expertWithFirstName:firstname LastName:lastname];
             expert.guid = guid;
             expert.businessUnitName = businessUnit;
+            expert.imageURLString = pictureUrl;
             
             [self.experts addObject:expert];
             

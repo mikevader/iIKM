@@ -68,6 +68,7 @@
 
 - (void)startDownload;
 - (void)cancelDownload;
+- (void)handleError:(NSError *)error;
 
 @end
 

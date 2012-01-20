@@ -125,18 +125,4 @@ NSMutableSet* skills;
 											  otherButtonTitles:nil];
     [alertView show];
 }
-
-
-
-
-
--(NSSet*)listAllExpertsForSkill:(NSNumber*)skillGuid
-{
-    NSMutableSet* experts = [[NSMutableSet alloc] init];
-    
-    [experts addObject:[Expert expertWithFirstName:@"Michael" LastName:@"Mühlebach"]];
-    
-    return experts;
-}
-
 @end

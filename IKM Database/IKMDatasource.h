@@ -22,7 +22,6 @@
 
 
 - (void)startDownloadSkills;
-- (NSSet*)listAllExpertsForSkill:(NSNumber*)skillGuid;
 - (BOOL)isActiveDownload;
 - (void)handleError:(NSError *)error;
 

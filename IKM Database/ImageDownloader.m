@@ -55,7 +55,6 @@
 
 #define kAppIconHeight 48
 
-
 @implementation ImageDownloader
 
 @synthesize expert;
@@ -94,11 +93,42 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    
+    if ([error code] == kCFURLErrorNotConnectedToInternet)
+	{
+        // if we can identify the error, we can present a more precise message to the user.
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"No Connection Error"
+															 forKey:NSLocalizedDescriptionKey];
+        NSError *noConnectionError = [NSError errorWithDomain:NSCocoaErrorDomain
+														 code:kCFURLErrorNotConnectedToInternet
+													 userInfo:userInfo];
+        [self handleError:noConnectionError];
+    }
+	else
+	{
+        // otherwise handle the error generically
+        [self handleError:error];
+    }
+
 	// Clear the activeDownload property to allow later attempts
     self.activeDownload = nil;
     
     // Release the connection now that it's finished
     self.imageConnection = nil;
+}
+
+// -------------------------------------------------------------------------------
+//	handleError:error
+// -------------------------------------------------------------------------------
+- (void)handleError:(NSError *)error
+{
+    NSString *errorMessage = [error localizedDescription];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Can not load skills from IKM."
+														message:errorMessage
+													   delegate:nil
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+    [alertView show];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
