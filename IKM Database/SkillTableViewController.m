@@ -160,10 +160,10 @@
     return cell;
 }
 
-- (void)skillsDidLoad:(NSArray *)skills
+- (void)skillsDidLoad:(NSArray *)aSkills
 {
     self.skills = nil;
-    self.skills = skills;
+    self.skills = aSkills;
     
     self.skills = [self.skills sortedArrayUsingComparator:^(id obj1, id obj2) {
         NSComparisonResult result = [[obj1 name] compare:[obj2 name]];

@@ -176,9 +176,9 @@
     }
 }
 
--(void)expertsDidLoad:(NSArray *)experts
+-(void)expertsDidLoad:(NSArray *)aExperts
 {
-    self.experts = experts;
+    self.experts = aExperts;
     
     self.experts = [self.experts sortedArrayUsingComparator:^(id obj1, id obj2) {
         NSComparisonResult result = [[obj1 lastName] compare:[obj2 lastName]];

@@ -22,7 +22,7 @@ NSMutableSet* skills;
 -(id)init
 {
     self = [super init];
-    skills = [[NSMutableSet alloc] init];
+    skills = [NSMutableSet set];
     return self;
 }
 
@@ -81,6 +81,7 @@ NSMutableSet* skills;
     }
     
     [delegate skillsDidLoad:[skills allObjects]];
+    [skills removeAllObjects];
 }
 
 - (BOOL)isActiveDownload
