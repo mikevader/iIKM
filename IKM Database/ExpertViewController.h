@@ -10,7 +10,7 @@
 #import "Expert.h"
 #import "ImageDownloader.h"
 
-@interface ExpertViewController : UIViewController<ImageDownloaderDelegate>
+@interface ExpertViewController : UITableViewController<ImageDownloaderDelegate>
 
 @property (strong, nonatomic) Expert* expert;
 @property (assign) IBOutlet UILabel* expertName;

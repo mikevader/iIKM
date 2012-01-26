@@ -40,7 +40,6 @@
 		DDB4043F14BC2D09009F6A09 /* skilldb57.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB4043E14BC2D09009F6A09 /* skilldb57.png */; };
 		DDB4044114BC2D0E009F6A09 /* skilldb114.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB4044014BC2D0E009F6A09 /* skilldb114.png */; };
 		DDD8BB18146AD9D500BF504D /* ExpertTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */; };
-		DDDEE5DC14CD960500CF174C /* ExpertDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDEE5DB14CD960500CF174C /* ExpertDetailTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +104,6 @@
 		DDB4044014BC2D0E009F6A09 /* skilldb114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skilldb114.png; path = ../skilldb114.png; sourceTree = "<group>"; };
 		DDD8BB16146AD9D500BF504D /* ExpertTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertTableViewController.h; sourceTree = "<group>"; };
 		DDD8BB17146AD9D500BF504D /* ExpertTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertTableViewController.m; sourceTree = "<group>"; };
-		DDDEE5DA14CD960500CF174C /* ExpertDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertDetailTableViewController.h; sourceTree = "<group>"; };
-		DDDEE5DB14CD960500CF174C /* ExpertDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertDetailTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +196,6 @@
 				DDA6AC04146A7E2700383B11 /* MainStoryboard_iPad.storyboard */,
 				DDA6AC07146A7E2700383B11 /* ExpertViewController.h */,
 				DDA6AC08146A7E2700383B11 /* ExpertViewController.m */,
-				DDDEE5DA14CD960500CF174C /* ExpertDetailTableViewController.h */,
-				DDDEE5DB14CD960500CF174C /* ExpertDetailTableViewController.m */,
 				DDA6AC0E146A7E2700383B11 /* TestViewController.h */,
 				DDA6AC0F146A7E2700383B11 /* TestViewController.m */,
 				DDA6AC42146AA8CF00383B11 /* SkillTableViewController.h */,
@@ -402,7 +397,6 @@
 				DD25012514B60B8300E215A7 /* ExpertsDownloader.m in Sources */,
 				DDB4043A14BAE92C009F6A09 /* QueryParameter.m in Sources */,
 				DDB4043D14BAE951009F6A09 /* SkillQuery.m in Sources */,
-				DDDEE5DC14CD960500CF174C /* ExpertDetailTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

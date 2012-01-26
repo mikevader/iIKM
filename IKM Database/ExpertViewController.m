@@ -16,6 +16,13 @@
 @synthesize businessUnit;
 @synthesize picture;
 
+#define DetailCellIdentifier @"DetailCell"
+
+enum {
+    DetailSection,
+    ExpertDetailSectionCount
+} ExpertDetailSections;
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -90,6 +97,82 @@
     } else {
         return YES;
     }
+}
+
+
+// UITableViewController
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return ExpertDetailSectionCount;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case DetailSection:
+            return @"Details";
+            break;
+            
+        default:
+            return nil;
+            break;
+    }
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    switch (section) {
+        case DetailSection:
+            return 3;
+            break;
+            
+        default:
+            return 0;
+            break;
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:DetailCellIdentifier];
+    }
+    
+    
+    NSString* text = nil;
+    NSString* label = nil;
+    
+    switch (indexPath.section) {
+        case DetailSection:
+            switch (indexPath.row) {
+                case 0:
+                    label = @"BU";
+                    text = expert.businessUnitName;
+                    break;
+                case 1:
+                    label = @"Level";
+                    text = expert.careerLevel;
+                    break;
+                case 2:
+                    label = @"Location";
+                    text = expert.residence;
+                    break;
+                case 3:
+                    label = @"Username";
+                    text = expert.username;
+                    break;
+                    
+                default:
+                    break;
+            }
+            break;
+            
+        default:
+            break;
+    }
+    
+    cell.detailTextLabel.text = text;
+    cell.textLabel.text = label;
+    
+    return cell;
 }
 
 @end

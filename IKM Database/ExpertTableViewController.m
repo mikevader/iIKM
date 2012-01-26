@@ -15,7 +15,9 @@
 
 @synthesize queries;
 @synthesize experts;
+@synthesize filteredExperts;
 @synthesize imageDownloadsInProgress;
+@synthesize uiSearchBar;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,6 +42,8 @@
 {
     [super viewDidLoad];
     
+    self.filteredExperts = [NSMutableArray array];
+    
     ExpertsDownloader* expertsLoader = [[ExpertsDownloader alloc] init];
     expertsLoader.delegate = self;
     expertsLoader.queries = queries;
@@ -60,6 +64,8 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.experts = nil;
+    self.filteredExperts = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -103,7 +109,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return experts.count;
+    return filteredExperts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,7 +121,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    Expert* expert = [experts objectAtIndex:indexPath.row];
+    Expert* expert = [filteredExperts objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@, %@", expert.lastName, expert.firstName];
     
@@ -186,6 +192,9 @@
             return result;
         }
     }];
+    
+    [self.filteredExperts removeAllObjects];
+    [self.filteredExperts addObjectsFromArray:self.experts];
 
     [self.tableView reloadData];
 }
@@ -194,12 +203,12 @@
 // this method is used in case the user scrolled into a set of cells that don't have their app icons yet
 - (void)loadImagesForOnscreenRows
 {
-    if ([self.experts count] > 0)
+    if ([self.filteredExperts count] > 0)
     {
         NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
         for (NSIndexPath *indexPath in visiblePaths)
         {
-            Expert *expert = [self.experts objectAtIndex:indexPath.row];
+            Expert *expert = [self.filteredExperts objectAtIndex:indexPath.row];
             
             if (!expert.image) // avoid the app icon download if the app already has an icon
             {
@@ -225,6 +234,51 @@
     [self loadImagesForOnscreenRows];
 }
 
+
+#pragma mark -
+#pragma mark Content Filtering
+- (void)filterContentForSearchText:(NSString*)searchText
+{
+	/*
+	 Update the filtered array based on the search text and scope.
+	 */
+	
+	[self.filteredExperts removeAllObjects]; // First clear the filtered array.
+	
+	/*
+	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
+	 */
+	for (Expert* expert in self.experts)
+	{
+        NSRange firstNameResult = [expert.firstName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        NSRange lastNameResult = [expert.lastName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if (searchText == nil || [searchText isEqualToString:@""] || firstNameResult.location != NSNotFound || lastNameResult.location != NSNotFound) {
+            
+            [self.filteredExperts addObject:expert];
+		}
+	}
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [self filterContentForSearchText:searchText];
+    [self.tableView reloadData];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSString* searchText = searchBar.text;
+    
+    [self filterContentForSearchText:searchText];
+    [self.tableView reloadData];
+    
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
 
 /*
  // Override to support conditional editing of the table view.
@@ -282,7 +336,7 @@
 {
     ExpertViewController* expertViewController = segue.destinationViewController;
     NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
-    Expert* expert = [experts objectAtIndex:indexPath.row];
+    Expert* expert = [self.filteredExperts objectAtIndex:indexPath.row];
     expertViewController.expert = expert;
     
 }
